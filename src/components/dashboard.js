@@ -5,8 +5,10 @@ import {
 } from 'recharts';
 import Papa from 'papaparse';
 import _ from 'lodash';
+import { format, parseISO, getISOWeek, getYear } from 'date-fns';
 
-// Import CSV files
+// Assume we're using webpack/craco file-loader configured for CSV files
+// Alternatively, these could be imported dynamically with fetch
 import productsCSV from '../data/Products2.csv';
 import salesOrderCSV from '../data/SalesOrder.csv';
 import purchaseOrderCSV from '../data/PO.csv';
@@ -50,7 +52,7 @@ const Dashboard = () => {
         const clocks = await parseCSVFile(clocksCSV);
         
         // Process data
-        const result = await calculateMetrics(products, salesOrders, purchaseOrders, clocks);
+        const result = calculateMetrics(products, salesOrders, purchaseOrders, clocks);
         setData(result);
         setLoading(false);
       } catch (err) {
@@ -64,39 +66,52 @@ const Dashboard = () => {
 
   // Helper function to parse CSV files
   const parseCSVFile = (file) => {
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
       Papa.parse(file, {
         header: true,
         dynamicTyping: true,
         skipEmptyLines: true,
         complete: (results) => {
-          resolve(results.data);
+          if (results.errors && results.errors.length > 0) {
+            reject(new Error('Error parsing CSV: ' + results.errors[0].message));
+          } else {
+            resolve(results.data);
+          }
+        },
+        error: (error) => {
+          reject(error);
         }
       });
     });
   };
 
   // Extract week number from date
-  const getWeekNumber = (d) => {
-    // Copy date so don't modify original
-    d = new Date(d);
-    // Set to nearest Thursday: current date + 4 - current day number
-    d.setDate(d.getDate() + 4 - (d.getDay() || 7));
-    // Get first day of year
-    const yearStart = new Date(d.getFullYear(), 0, 1);
-    // Calculate full weeks to nearest Thursday
-    const weekNumber = Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
-    // Format to ensure proper sorting (pad with leading zero if needed)
-    const paddedWeek = weekNumber.toString().padStart(2, '0');
-    return `${d.getFullYear()}-W${paddedWeek}`;
+  const getWeekNumber = (dateStr) => {
+    try {
+      // Handle various date formats
+      const date = typeof dateStr === 'string' ? parseISO(dateStr) : new Date(dateStr);
+      
+      // Get week number and year
+      const weekNum = getISOWeek(date);
+      const year = getYear(date);
+      
+      // Format to ensure proper sorting (pad with leading zero if needed)
+      const paddedWeek = weekNum.toString().padStart(2, '0');
+      return `${year}-W${paddedWeek}`;
+    } catch (err) {
+      console.error('Error parsing date:', dateStr, err);
+      return 'Unknown';
+    }
   };
 
   // Main metrics calculation function
-  const calculateMetrics = async (products, salesOrders, purchaseOrders, clocks) => {
+  const calculateMetrics = (products, salesOrders, purchaseOrders, clocks) => {
     // Create a map of product names to units per case for easy lookup
     const productMap = {};
     products.forEach(product => {
-      productMap[product['Product Name']] = product['Units Per Case'];
+      if (product['Product Name']) {
+        productMap[product['Product Name']] = product['Units Per Case'] || 1;
+      }
     });
 
     // Process sales orders - calculate cases shipped by week and by store
@@ -105,20 +120,23 @@ const Dashboard = () => {
 
     salesOrders.forEach(order => {
       const product = order.Product;
-      const quantity = order.Quantity;
-      const customer = order.Customer;
+      const quantity = order.Quantity || 0;
+      const customer = order.Customer || 'Unknown';
       
-      // Skip if we can't find the product in our product map
-      if (!productMap[product]) {
+      // Skip if we can't find the product in our product map or it's invalid
+      if (!product || !productMap[product]) {
         return;
       }
       
-      const unitsPerCase = productMap[product];
+      const unitsPerCase = productMap[product] || 1;
       const cases = quantity / unitsPerCase;
       
       // Parse the delivery date
-      const deliveryDate = new Date(order['Delivery Date']);
+      const deliveryDate = order['Delivery Date'];
+      if (!deliveryDate) return;
+      
       const week = getWeekNumber(deliveryDate);
+      if (week === 'Unknown') return;
       
       // Add to total cases shipped by week
       if (!salesByWeek[week]) {
@@ -141,19 +159,22 @@ const Dashboard = () => {
 
     purchaseOrders.forEach(po => {
       const product = po['Product Name'];
-      const quantity = po['Purchase Quantity'];
+      const quantity = po['Purchase Quantity'] || 0;
       
-      // Skip if we can't find the product in our product map
-      if (!productMap[product]) {
+      // Skip if we can't find the product in our product map or it's invalid
+      if (!product || !productMap[product]) {
         return;
       }
       
-      const unitsPerCase = productMap[product];
+      const unitsPerCase = productMap[product] || 1;
       const cases = quantity / unitsPerCase;
       
       // Parse the purchase order date
-      const poDate = new Date(po['Purchase Order Date']);
+      const poDate = po['Purchase Order Date'];
+      if (!poDate) return;
+      
       const week = getWeekNumber(poDate);
+      if (week === 'Unknown') return;
       
       // Add to total cases received by week
       if (!poByWeek[week]) {
@@ -166,11 +187,14 @@ const Dashboard = () => {
     const laborHoursByWeek = {};
 
     clocks.forEach(clock => {
-      const dateIn = new Date(clock['Date In']);
+      if (!clock['Date In']) return;
+      
+      const dateIn = clock['Date In'];
       const week = getWeekNumber(dateIn);
+      if (week === 'Unknown') return;
       
       // Use Total Less Break as labor hours
-      const laborHours = clock['Total Less Break'];
+      const laborHours = clock['Total Less Break'] || 0;
       
       if (!laborHoursByWeek[week]) {
         laborHoursByWeek[week] = 0;
@@ -247,12 +271,25 @@ const Dashboard = () => {
     // Get all stores for the complete store analysis
     const allStores = Object.keys(storeTotal).sort((a, b) => storeTotal[b] - storeTotal[a]);
 
+    // Prepare all store data for the LineChart
+    const allStoreData = [];
+    allWeeks.forEach(week => {
+      allStores.forEach(store => {
+        allStoreData.push({
+          week,
+          cases: salesByStoreAndWeek[store]?.[week] || 0,
+          store
+        });
+      });
+    });
+
     // Format the metrics for the dashboard
     return {
       casesPerLaborHour: Object.values(casesPerLaborHourByWeek),
       salesAndPOByWeek: formattedWeeklyData,
       topStoresByWeek: topStores.map(store => storeDataMap[store]),
       allStoresByWeek: allStores.map(store => storeDataMap[store]),
+      allStoreData,
       weeks: allWeeks
     };
   };
@@ -448,7 +485,7 @@ const Dashboard = () => {
                   >
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis type="number" />
-		<YAxis dataKey="store" type="category" width={150} />
+                    <YAxis dataKey="store" type="category" width={150} />
                     <Tooltip />
                     <Legend />
                     <Bar dataKey="total" name="Total Cases Shipped" fill={colors.shipped} />
@@ -461,7 +498,9 @@ const Dashboard = () => {
               <h2 className="text-lg font-semibold mb-4">Cases Shipped by Store by Week</h2>
               <div className="h-96">
                 <ResponsiveContainer width="100%" height="100%">
-                  <LineChart>
+                  <LineChart 
+                    data={data.allStoreData}
+                  >
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis 
                       dataKey="week" 
@@ -471,30 +510,19 @@ const Dashboard = () => {
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    {data.allStoresByWeek.map((store, index) => {
-                      // Sort the data points by week for proper display
-                      const sortedData = [...store.data].sort((a, b) => {
-                        const [yearA, weekA] = a.week.split('-W');
-                        const [yearB, weekB] = b.week.split('-W');
-                        
-                        if (yearA !== yearB) {
-                          return parseInt(yearA) - parseInt(yearB);
-                        }
-                        return parseInt(weekA) - parseInt(weekB);
-                      });
-                      
-                      return (
-                        <Line 
-                          key={store.store}
-                          data={sortedData}
-                          type="monotone" 
-                          dataKey="cases" 
-                          name={store.store} 
-                          stroke={colors.stores[index % colors.stores.length]} 
-                          dot={false}
-                        />
-                      );
-                    })}
+                    {data.allStoresByWeek.map((store, index) => (
+                      <Line 
+                        key={store.store}
+                        dataKey="cases"
+                        type="monotone"
+                        name={store.store}
+                        stroke={colors.stores[index % colors.stores.length]}
+                        dot={false}
+                        connectNulls={true}
+                        // Filter data points for this specific store
+                        data={data.allStoreData.filter(d => d.store === store.store)}
+                      />
+                    ))}
                   </LineChart>
                 </ResponsiveContainer>
               </div>
