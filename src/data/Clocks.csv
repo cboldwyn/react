@@ -1,0 +1,414 @@
+First Name,Last Name,Employee Number,Clock ID,Position,Department,Date In,Time In,Date Out,Time Out,Status,Total,Break,Total Less Break,Regular,Overtime,Doubletime,Overtime Weekly,Statutory Holiday Work,Time In Comments,Time Out Comments,Manager Comments,Breaks,Break Violations,Breaks Waived
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-01-06,7:20 AM,2025-01-06,4:03 PM,Approved,8.72,0.60,8.12,8,0.12,0,0,No,,,,1:09 PM - 1:45 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-01-06,7:23 AM,2025-01-06,4:01 PM,Approved,8.63,0.53,8.10,8,0.10,0,0,No,,,,12:53 PM - 1:26 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-01-06,7:35 AM,2025-01-06,4:05 PM,Approved,8.50,0.50,8,8,0,0,0,No,,,,12:56 PM - 1:26 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-01-06,8:30 AM,2025-01-06,5:00 PM,Approved,8.50,0.53,7.97,7.97,0,0,0,No,,,,1:16 PM - 1:49 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-01-06,8:59 AM,2025-01-06,5:33 PM,Approved,8.57,0.50,8.07,8,0.07,0,0,No,,,,1:56 PM - 2:26 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-01-06,10:19 AM,2025-01-06,2:20 PM,Approved,4.02,0,4.02,4.02,0,0,0,No,,,,,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-01-07,7:25 AM,2025-01-07,4:01 PM,Approved,8.60,0.55,8.05,8,0.05,0,0,No,,,,12:38 PM - 1:11 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-01-07,7:32 AM,2025-01-07,4:07 PM,Approved,8.58,0.50,8.08,8,0.08,0,0,No,,,,12:57 PM - 1:28 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-01-07,7:39 AM,2025-01-07,4:09 PM,Approved,8.52,0.53,7.98,7.98,0,0,0,No,,,,12:43 PM - 1:15 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-01-07,8:28 AM,2025-01-07,5:04 PM,Approved,8.60,0.50,8.10,8,0.10,0,0,No,,,,1:27 PM - 1:57 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-01-07,8:35 AM,2025-01-07,5:05 PM,Approved,8.50,0.50,8,8,0,0,0,No,,,,1:26 PM - 1:56 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-01-07,10:20 AM,2025-01-07,3:27 PM,Approved,5.12,0,5.12,5.12,0,0,0,No,,,,,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-01-08,7:25 AM,2025-01-08,4:03 PM,Approved,8.63,0.55,8.08,8,0.08,0,0,No,,,,12:48 PM - 1:21 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-01-08,7:29 AM,2025-01-08,4:05 PM,Approved,8.60,0.55,8.05,8,0.05,0,0,No,,,,12:29 PM - 1:02 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-01-08,8:30 AM,2025-01-08,5:01 PM,Approved,8.52,0.50,8.02,8,0.02,0,0,No,,,,1:21 PM - 1:51 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-01-08,8:30 AM,2025-01-08,5:00 PM,Approved,8.50,0.53,7.97,7.97,0,0,0,No,,,,1:00 PM - 1:32 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-01-08,8:30 AM,2025-01-08,5:01 PM,Approved,8.52,0.50,8.02,8,0.02,0,0,No,,,,1:29 PM - 2:00 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-01-08,10:13 AM,2025-01-08,3:10 PM,Approved,4.93,0,4.93,4.93,0,0,0,No,,,,,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-01-09,7:24 AM,2025-01-09,2:34 PM,Approved,7.17,0.57,6.60,6.60,0,0,0,No,,,,12:36 PM - 1:10 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-01-09,7:30 AM,2025-01-09,4:00 PM,Approved,8.50,0.58,7.92,7.92,0,0,0,No,,,,12:31 PM - 1:07 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-01-09,8:30 AM,2025-01-09,5:00 PM,Approved,8.50,0.57,7.93,7.93,0,0,0,No,,,,1:28 PM - 2:02 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-01-09,9:03 AM,2025-01-09,5:33 PM,Approved,8.50,0.50,8,8,0,0,0,No,,,,1:52 PM - 2:22 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-01-09,10:35 AM,2025-01-09,3:52 PM,Approved,5.28,0,5.28,5.28,0,0,0,No,,,,,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-01-10,7:23 AM,2025-01-10,4:11 PM,Approved,8.80,0.50,8.30,8,0.30,0,0,No,,,maywood and San bern delivery,11:45 AM - 12:15 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-01-10,7:29 AM,2025-01-10,4:04 PM,Approved,8.58,0.52,8.06,8,0.06,0,0,No,,,,12:46 PM - 1:17 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-01-10,7:34 AM,2025-01-10,4:11 PM,Approved,8.62,0.50,8.12,8,0.12,0,0,No,,,,1:00 PM - 1:30 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-01-10,8:30 AM,2025-01-10,5:00 PM,Approved,8.50,0.55,7.95,7.95,0,0,0,No,,,,1:24 PM - 1:58 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-01-10,8:35 AM,2025-01-10,5:04 PM,Approved,8.48,0.50,7.98,7.98,0,0,0,No,,,,1:28 PM - 1:58 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-01-13,7:30 AM,2025-01-13,4:06 PM,Approved,8.60,0.50,8.10,8,0.10,0,0,No,,,,1:12 PM - 1:42 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-01-13,7:50 AM,2025-01-13,4:00 PM,Approved,8.17,0.52,7.65,7.65,0,0,0,No,,,,12:34 PM - 1:05 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-01-13,8:30 AM,2025-01-13,5:00 PM,Approved,8.50,0.53,7.97,7.97,0,0,0,No,,,,1:30 PM - 2:02 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-01-13,8:58 AM,2025-01-13,1:27 PM,Approved,4.48,0,4.48,4.48,0,0,0,No,,,,,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-01-13,10:38 AM,2025-01-13,3:32 PM,Approved,4.90,0,4.90,4.90,0,0,0,No,,,,,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-01-14,7:11 AM,2025-01-14,4:04 PM,Approved,8.88,0.57,8.32,8,0.32,0,0,No,,,,12:47 PM - 1:21 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-01-14,7:30 AM,2025-01-14,4:02 PM,Approved,8.53,0.52,8.01,8,0.01,0,0,No,,,,12:44 PM - 1:15 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-01-14,8:30 AM,2025-01-14,5:00 PM,Approved,8.50,0.53,7.97,7.97,0,0,0,No,,,,1:40 PM - 2:13 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-01-14,9:11 AM,2025-01-14,5:35 PM,Approved,8.40,0.50,7.90,7.90,0,0,0,No,,,,1:37 PM - 2:07 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-01-14,10:29 AM,2025-01-14,3:00 PM,Approved,4.52,0,4.52,4.52,0,0,0,No,,,,,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-01-15,7:25 AM,2025-01-15,4:02 PM,Approved,8.62,0.60,8.02,8,0.02,0,0,No,,,,1:04 PM - 1:41 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-01-15,7:26 AM,2025-01-15,4:01 PM,Approved,8.58,0.50,8.08,8,0.08,0,0,No,,,,1:00 PM - 1:31 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-01-15,7:30 AM,2025-01-15,4:02 PM,Approved,8.53,0.50,8.03,8,0.03,0,0,No,,,,12:55 PM - 1:25 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-01-15,8:30 AM,2025-01-15,5:00 PM,Approved,8.50,0.53,7.97,7.97,0,0,0,No,,,,1:28 PM - 2:00 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-01-15,8:59 AM,2025-01-15,5:15 PM,Approved,8.27,0.50,7.77,7.77,0,0,0,No,,,,1:48 PM - 2:18 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-01-15,10:23 AM,2025-01-15,3:32 PM,Approved,5.15,0,5.15,5.15,0,0,0,No,,,,,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-01-16,7:28 AM,2025-01-16,4:02 PM,Approved,8.57,0.52,8.05,8,0.05,0,0,No,,,,12:40 PM - 1:12 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-01-16,7:34 AM,2025-01-16,4:03 PM,Approved,8.48,0.50,7.98,7.98,0,0,0,No,,,,12:56 PM - 1:27 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-01-16,7:40 AM,2025-01-16,4:07 PM,Approved,8.45,0.50,7.95,7.95,0,0,0,No,,,,12:42 PM - 1:12 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-01-16,8:30 AM,2025-01-16,5:00 PM,Approved,8.50,0.55,7.95,7.95,0,0,0,No,,,,1:28 PM - 2:01 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-01-16,8:40 AM,2025-01-16,5:04 PM,Approved,8.40,0.50,7.90,7.90,0,0,0,No,,,,1:37 PM - 2:07 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-01-16,10:22 AM,2025-01-16,4:02 PM,Approved,5.67,0.50,5.17,5.17,0,0,0,No,,,On the road,2:22 PM - 2:52 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-01-17,7:27 AM,2025-01-17,4:04 PM,Approved,8.62,0.53,8.09,8,0.09,0,0,No,,,,12:50 PM - 1:23 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-01-17,7:30 AM,2025-01-17,4:02 PM,Approved,8.53,0.50,8.03,8,0.03,0,0,No,,,,12:36 PM - 1:06 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-01-17,7:33 AM,2025-01-17,4:09 PM,Approved,8.60,0.57,8.03,8,0.03,0,0,No,,,,12:49 PM - 1:23 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-01-17,8:30 AM,2025-01-17,5:00 PM,Approved,8.50,0.55,7.95,7.95,0,0,0,No,,,,1:27 PM - 2:00 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-01-17,8:58 AM,2025-01-17,4:04 PM,Approved,7.10,0.50,6.60,6.60,0,0,0,No,,,,1:37 PM - 2:07 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-01-17,10:15 AM,2025-01-17,4:07 PM,Approved,5.87,0.50,5.37,5.37,0,0,0,No,,,On the road,2:15 PM - 2:45 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-01-20,7:15 AM,2025-01-20,4:07 PM,Approved,8.87,0.60,8.27,8,0.27,0,0,No,,,,1:04 PM - 1:40 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-01-20,7:29 AM,2025-01-20,4:04 PM,Approved,8.58,0.50,8.08,8,0.08,0,0,No,,,,12:41 PM - 1:11 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-01-20,7:35 AM,2025-01-20,3:58 PM,Approved,8.38,0.50,7.88,7.88,0,0,0,No,,,,1:03 PM - 1:34 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-01-20,8:30 AM,2025-01-20,5:00 PM,Approved,8.50,0.57,7.93,7.93,0,0,0,No,,,,1:30 PM - 2:05 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-01-20,8:59 AM,2025-01-20,4:41 PM,Approved,7.70,0.50,7.20,7.20,0,0,0,No,,,,1:46 PM - 2:16 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-01-20,10:03 AM,2025-01-20,2:43 PM,Approved,4.67,0,4.67,4.67,0,0,0,No,,,,,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-01-21,7:23 AM,2025-01-21,4:16 PM,Approved,8.88,0.50,8.38,8,0.38,0,0,No,,,,12:44 PM - 1:14 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-01-21,7:31 AM,2025-01-21,4:02 PM,Approved,8.52,0.50,8.02,8,0.02,0,0,No,,,,12:42 PM - 1:13 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-01-21,7:31 AM,2025-01-21,4:11 PM,Approved,8.67,0.50,8.17,8,0.17,0,0,No,,,,12:58 PM - 1:28 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-01-21,7:56 AM,2025-01-21,4:32 PM,Approved,8.60,0.50,8.10,8,0.10,0,0,No,,,,12:42 PM - 1:12 PM - 1st 30-minute Break ,,0 
+Abraham,Sanchez Trujillo,,2338,Delivery Driver,Distribution Center,2025-01-21,8:00 AM,2025-01-21,10:21 AM,Approved,0,2.35,0,0,0,0,0,No,,,mark manually input break for unscheduled 8-1021am,8:00 AM - 10:21 AM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-01-21,8:30 AM,2025-01-21,5:00 PM,Approved,8.50,0.58,7.92,7.92,0,0,0,No,,,,2:07 PM - 2:42 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-01-21,10:18 AM,2025-01-21,4:06 PM,Approved,5.80,0.50,5.30,5.30,0,0,0,No,,,On the road/ if use app messes with punch in/out time,2:18 PM - 2:48 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-01-22,7:21 AM,2025-01-22,3:18 PM,Approved,7.95,0.60,7.35,7.35,0,0,0,No,,,,1:07 PM - 1:44 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-01-22,7:30 AM,2025-01-22,4:00 PM,Approved,8.50,0.50,8,8,0,0,0,No,,,"My dog ate my homework so with nothing left to do about the situation I went with Ricky in order to help with Sanbernadino delivery. To my surprise, the app doesn't allow lunches unless you physically have an tablet.",12:00 PM - 12:30 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-01-22,7:35 AM,2025-01-22,4:07 PM,Approved,8.53,0.50,8.03,8,0.03,0,0,No,,,,12:39 PM - 1:09 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-01-22,8:30 AM,2025-01-22,5:01 PM,Approved,8.52,0.57,7.95,7.95,0,0,0,No,,,,1:49 PM - 2:23 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-01-22,9:00 AM,2025-01-22,5:36 PM,Approved,8.60,0.50,8.10,8,0.10,0,0,No,,,,1:59 PM - 2:30 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-01-22,10:27 AM,2025-01-22,3:48 PM,Approved,5.35,0.50,4.85,4.85,0,0,0,No,,,On the road,2:27 PM - 2:57 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-01-23,7:24 AM,2025-01-23,4:09 PM,Approved,8.75,0.65,8.10,8,0.10,0,0,No,,,,12:58 PM - 1:37 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-01-23,7:26 AM,2025-01-23,4:19 PM,Approved,8.88,0.50,8.38,8,0.38,0,0,No,,,Delivery with DTLB/ Belmont,12:30 PM - 1:00 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-01-23,7:30 AM,2025-01-23,4:05 PM,Approved,8.58,0.50,8.08,8,0.08,0,0,No,,,,12:35 PM - 1:06 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-01-23,8:30 AM,2025-01-23,5:00 PM,Approved,8.50,0.53,7.97,7.97,0,0,0,No,,,,1:44 PM - 2:17 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-01-23,9:05 AM,2025-01-23,5:30 PM,Approved,8.42,0.50,7.92,7.92,0,0,0,No,,,,1:45 PM - 2:16 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-01-23,11:32 AM,2025-01-23,4:23 PM,Approved,4.85,0,4.85,4.85,0,0,0,No,,,,,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-01-24,7:34 AM,2025-01-24,2:04 PM,Approved,6.50,0,6.50,6.50,0,0,0,No,,,,,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-01-24,7:56 AM,2025-01-24,1:56 PM,Approved,6,0,6,6,0,0,0,No,,,,,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-01-24,8:01 AM,2025-01-24,2:00 PM,Approved,5.98,0,5.98,5.98,0,0,0,No,,,,,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-01-24,8:06 AM,2025-01-24,2:01 PM,Approved,5.92,0,5.92,5.92,0,0,0,No,,,,,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-01-24,8:25 AM,2025-01-24,2:02 PM,Approved,5.62,0,5.62,5.62,0,0,0,No,,,,,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-01-24,10:15 AM,2025-01-24,2:06 PM,Approved,3.85,0,3.85,3.85,0,0,0,No,,,,,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-01-27,7:11 AM,2025-01-27,4:44 PM,Approved,9.55,0.55,9,8,1,0,0,No,,,,1:09 PM - 1:43 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-01-27,7:27 AM,2025-01-27,4:02 PM,Approved,8.58,0.52,8.06,8,0.06,0,0,No,,,,1:01 PM - 1:32 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-01-27,7:37 AM,2025-01-27,4:06 PM,Approved,8.48,0.50,7.98,7.98,0,0,0,No,,,,12:37 PM - 1:07 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-01-27,8:30 AM,2025-01-27,5:00 PM,Approved,8.50,0.63,7.87,7.87,0,0,0,No,,,,1:38 PM - 2:16 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-01-27,9:00 AM,2025-01-27,5:31 PM,Approved,8.52,0.50,8.02,8,0.02,0,0,No,,,,2:00 PM - 2:30 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-01-28,7:26 AM,2025-01-28,4:07 PM,Approved,8.68,0.52,8.16,8,0.16,0,0,No,,,,12:53 PM - 1:25 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-01-28,7:27 AM,2025-01-28,4:00 PM,Approved,8.55,0.53,8.02,8,0.02,0,0,No,,,,12:59 PM - 1:31 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-01-28,7:28 AM,2025-01-28,4:09 PM,Approved,8.68,0.50,8.18,8,0.18,0,0,No,,,,12:37 PM - 1:07 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-01-28,8:33 AM,2025-01-28,5:00 PM,Approved,8.45,0.57,7.88,7.88,0,0,0,No,,,,1:47 PM - 2:21 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-01-28,9:01 AM,2025-01-28,5:34 PM,Approved,8.55,0.50,8.05,8,0.05,0,0,No,,,,2:02 PM - 2:32 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-01-29,7:20 AM,2025-01-29,4:02 PM,Approved,8.70,0.53,8.17,8,0.17,0,0,No,,,,12:46 PM - 1:19 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-01-29,7:25 AM,2025-01-29,4:03 PM,Approved,8.63,0.50,8.13,8,0.13,0,0,No,,,,12:38 PM - 1:08 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-01-29,7:26 AM,2025-01-29,4:24 PM,Approved,8.97,0.58,8.38,8,0.38,0,0,No,,,,12:52 PM - 1:28 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-01-29,8:30 AM,2025-01-29,5:00 PM,Approved,8.50,0.57,7.93,7.93,0,0,0,No,,,,1:37 PM - 2:12 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-01-29,9:00 AM,2025-01-29,5:31 PM,Approved,8.52,0.50,8.02,8,0.02,0,0,No,,,,1:47 PM - 2:17 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-01-30,7:16 AM,2025-01-30,4:08 PM,Approved,8.88,0.60,8.28,8,0.28,0,0,No,,,,1:09 PM - 1:45 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-01-30,7:27 AM,2025-01-30,4:05 PM,Approved,8.63,0.52,8.11,8,0.11,0,0,No,,,,12:53 PM - 1:24 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-01-30,7:30 AM,2025-01-30,4:09 PM,Approved,8.65,0.50,8.15,8,0.15,0,0,No,,,,12:36 PM - 1:07 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-01-30,8:31 AM,2025-01-30,5:01 PM,Approved,8.50,0.58,7.92,7.92,0,0,0,No,,,,1:59 PM - 2:35 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-01-30,9:04 AM,2025-01-30,5:34 PM,Approved,8.50,0.50,8,8,0,0,0,No,,,,1:28 PM - 1:58 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-01-31,7:26 AM,2025-01-31,4:15 PM,Approved,8.82,0.50,8.32,8,0.32,0,0,No,,,,12:52 PM - 1:23 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-01-31,7:26 AM,2025-01-31,4:04 PM,Approved,8.63,0.52,8.11,8,0.11,0,0,No,,,,12:58 PM - 1:29 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-01-31,7:37 AM,2025-01-31,4:09 PM,Approved,8.53,0.58,7.95,7.95,0,0,0,No,,,,1:04 PM - 1:39 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-01-31,8:30 AM,2025-01-31,5:00 PM,Approved,8.50,0.55,7.95,7.95,0,0,0,No,,,,2:00 PM - 2:33 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-01-31,9:02 AM,2025-01-31,5:21 PM,Approved,8.32,0.50,7.82,7.82,0,0,0,No,,,,2:00 PM - 2:30 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-02-03,7:25 AM,2025-02-03,4:04 PM,Approved,8.65,0.50,8.15,8,0.15,0,0,No,,,,12:50 PM - 1:20 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-02-03,7:29 AM,2025-02-03,4:04 PM,Approved,8.58,0.57,8.01,8,0.01,0,0,No,,,,12:46 PM - 1:20 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-02-03,7:30 AM,2025-02-03,4:00 PM,Approved,8.50,0.50,8,8,0,0,0,No,,,I forgot to clock out for lunch,12:00 PM - 12:30 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-02-03,8:30 AM,2025-02-03,5:00 PM,Approved,8.50,0.55,7.95,7.95,0,0,0,No,,,,1:52 PM - 2:26 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-02-03,9:29 AM,2025-02-03,5:30 PM,Approved,8.02,0.52,7.50,7.50,0,0,0,No,,,,1:59 PM - 2:30 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-02-03,10:25 AM,2025-02-03,3:55 PM,Approved,5.50,0,5.50,5.50,0,0,0,No,,,,,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-02-04,7:27 AM,2025-02-04,4:02 PM,Approved,8.58,0.50,8.08,8,0.08,0,0,No,,,,12:42 PM - 1:13 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-02-04,7:32 AM,2025-02-04,4:11 PM,Approved,8.65,0.57,8.08,8,0.08,0,0,No,,,,12:44 PM - 1:18 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-02-04,8:30 AM,2025-02-04,4:27 PM,Approved,7.95,0.55,7.40,7.40,0,0,0,No,,,,1:45 PM - 2:18 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-02-04,9:00 AM,2025-02-04,5:02 PM,Approved,8.03,0.50,7.53,7.53,0,0,0,No,,,,2:04 PM - 2:34 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-02-04,10:22 AM,2025-02-04,3:28 PM,Approved,5.10,0,5.10,5.10,0,0,0,No,,,,,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-02-04,12:55 PM,2025-02-04,9:08 PM,Approved,8.22,0.50,7.72,7.72,0,0,0,No,,,Worked delivery shift at paramount,4:41 PM - 5:11 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-02-05,7:25 AM,2025-02-05,4:06 PM,Approved,8.68,0.55,8.13,8,0.13,0,0,No,,,,12:56 PM - 1:29 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-02-05,7:27 AM,2025-02-05,4:02 PM,Approved,8.58,0.52,8.06,8,0.06,0,0,No,,,,12:38 PM - 1:10 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-02-05,9:00 AM,2025-02-05,5:30 PM,Approved,8.50,0.52,7.98,7.98,0,0,0,No,,,,1:39 PM - 2:11 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-02-05,10:09 AM,2025-02-05,3:30 PM,Approved,5.35,0,5.35,5.35,0,0,0,No,,,,,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-02-05,12:55 PM,2025-02-05,9:00 PM,Approved,8.08,0.50,7.58,7.58,0,0,0,No,,,Covering for delivery at paramount able to clock in/out but not breaks,4:25 PM - 4:55 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-02-06,7:34 AM,2025-02-06,4:19 PM,Approved,8.75,0.53,8.22,8,0.22,0,0,No,,,,12:58 PM - 1:30 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-02-06,7:35 AM,2025-02-06,4:02 PM,Approved,8.45,0.52,7.93,7.93,0,0,0,No,,,,12:51 PM - 1:22 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-02-06,7:48 AM,2025-02-06,4:25 PM,Approved,8.62,0.52,8.10,8,0.10,0,0,No,,,,12:39 PM - 1:10 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-02-06,9:00 AM,2025-02-06,2:03 PM,Approved,5.05,0,5.05,5.05,0,0,0,No,,,,,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-02-06,10:18 AM,2025-02-06,2:03 PM,Approved,3.75,0,3.75,3.75,0,0,0,No,,,,,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-02-07,7:30 AM,2025-02-07,5:13 PM,Approved,9.73,0.53,9.20,8,1.20,0,0,No,,,,1:00 PM - 1:33 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-02-07,7:32 AM,2025-02-07,4:05 PM,Approved,8.55,0.50,8.05,8,0.05,0,0,No,,,,11:50 AM - 12:20 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-02-07,7:34 AM,2025-02-07,4:04 PM,Approved,8.50,0.52,7.98,7.98,0,0,0,No,,,,12:41 PM - 1:12 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-02-07,8:30 AM,2025-02-07,5:00 PM,Approved,8.50,0.55,7.95,7.95,0,0,0,No,,,,1:22 PM - 1:56 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-02-07,9:02 AM,2025-02-07,5:34 PM,Approved,8.53,0.50,8.03,8,0.03,0,0,No,,,,1:23 PM - 1:53 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-02-07,10:09 AM,2025-02-07,3:33 PM,Approved,5.40,0,5.40,5.40,0,0,0,No,,,,,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-02-10,6:44 AM,2025-02-10,4:13 PM,Approved,9.48,0.50,8.98,8,0.98,0,0,No,,,Missed lunch clock out,12:30 PM - 1:00 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-02-10,7:24 AM,2025-02-10,4:00 PM,Approved,8.60,0.53,8.07,8,0.07,0,0,No,,,,12:48 PM - 1:21 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-02-10,7:29 AM,2025-02-10,4:00 PM,Approved,8.52,0.50,8.02,8,0.02,0,0,No,,,,12:56 PM - 1:26 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-02-10,9:00 AM,2025-02-10,5:33 PM,Approved,8.55,0.50,8.05,8,0.05,0,0,No,,,,1:59 PM - 2:29 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-02-11,7:26 AM,2025-02-11,4:03 PM,Approved,8.62,0.55,8.07,8,0.07,0,0,No,,,,12:46 PM - 1:19 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-02-11,7:32 AM,2025-02-11,4:08 PM,Approved,8.60,0.57,8.03,8,0.03,0,0,No,,,,12:38 PM - 1:13 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-02-11,9:00 AM,2025-02-11,5:34 PM,Approved,8.57,0.50,8.07,8,0.07,0,0,No,,,,1:51 PM - 2:21 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-02-11,10:24 AM,2025-02-11,3:46 PM,Approved,5.37,0,5.37,5.37,0,0,0,No,,,,,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-02-11,12:55 PM,2025-02-11,8:58 PM,Approved,8.05,0.50,7.55,7.55,0,0,0,No,,,Covering at paramount for delivery couldn’t clock out for lunch,5:41 PM - 6:11 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-02-12,7:24 AM,2025-02-12,4:50 PM,Approved,9.43,0.50,8.93,8,0.93,0,0,No,,,Forgot to clock back in from lunch,12:30 PM - 1:00 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-02-12,7:30 AM,2025-02-12,4:04 PM,Approved,8.57,0.50,8.07,8,0.07,0,0,No,,,,12:45 PM - 1:15 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-02-12,7:44 AM,2025-02-12,4:23 PM,Approved,8.65,0.50,8.15,8,0.15,0,0,No,,,,12:30 PM - 1:01 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-02-12,9:02 AM,2025-02-12,3:05 PM,Approved,6.05,0,6.05,6.05,0,0,0,No,,,,,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-02-13,7:28 AM,2025-02-13,4:25 PM,Approved,8.95,0.53,8.42,8,0.42,0,0,No,,,,12:57 PM - 1:30 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-02-13,7:34 AM,2025-02-13,4:02 PM,Approved,8.47,0.55,7.92,7.92,0,0,0,No,,,,12:48 PM - 1:21 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-02-13,7:45 AM,2025-02-13,4:18 PM,Approved,8.55,0.50,8.05,8,0.05,0,0,No,,,,12:51 PM - 1:22 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-02-13,8:30 AM,2025-02-13,5:00 PM,Approved,8.50,0.52,7.98,7.98,0,0,0,No,,,,2:10 PM - 2:41 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-02-13,9:01 AM,2025-02-13,5:28 PM,Approved,8.45,0.50,7.95,7.95,0,0,0,No,,,,1:57 PM - 2:27 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-02-13,10:21 AM,2025-02-13,4:27 PM,Approved,6.10,0,6.10,6.10,0,0,0,No,,,,,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-02-14,7:30 AM,2025-02-14,4:00 PM,Approved,8.50,0.50,8,8,0,0,0,No,,,Clock in must've not gonna through and I didnt notice,12:00 PM - 12:30 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-02-14,7:46 AM,2025-02-14,4:09 PM,Approved,8.38,0.58,7.80,7.80,0,0,0,No,,,,12:42 PM - 1:17 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-02-14,8:30 AM,2025-02-14,5:00 PM,Approved,8.50,0.53,7.97,7.97,0,0,0,No,,,,2:09 PM - 2:42 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-02-14,9:00 AM,2025-02-14,5:05 PM,Approved,8.08,0.50,7.58,7.58,0,0,0,No,,,,1:54 PM - 2:24 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-02-14,10:24 AM,2025-02-14,1:52 PM,Approved,3.47,0,3.47,3.47,0,0,0,No,,,,,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-02-14,12:55 PM,2025-02-14,9:36 PM,Approved,8.68,0.50,8.18,8,0.18,0,0,No,,,Covered for delivery,5:00 PM - 5:30 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-02-17,7:20 AM,2025-02-17,4:00 PM,Approved,8.67,0.52,8.15,8,0.15,0,0,No,,,,12:51 PM - 1:23 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-02-17,7:21 AM,2025-02-17,4:08 PM,Approved,8.78,0.58,8.20,8,0.20,0,0,No,,,,12:44 PM - 1:20 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-02-17,7:28 AM,2025-02-17,4:01 PM,Approved,8.55,0.50,8.05,8,0.05,0,0,No,,,,12:36 PM - 1:06 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-02-17,8:30 AM,2025-02-17,5:00 PM,Approved,8.50,0.55,7.95,7.95,0,0,0,No,,,,2:06 PM - 2:39 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-02-17,9:00 AM,2025-02-17,5:33 PM,Approved,8.55,0.50,8.05,8,0.05,0,0,No,,,,2:03 PM - 2:33 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-02-17,11:33 AM,2025-02-17,3:40 PM,Approved,4.12,0,4.12,4.12,0,0,0,No,,,,,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-02-18,7:31 AM,2025-02-18,4:01 PM,Approved,8.50,0.52,7.98,7.98,0,0,0,No,,,,12:48 PM - 1:19 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-02-18,7:32 AM,2025-02-18,4:11 PM,Approved,8.65,0.52,8.13,8,0.13,0,0,No,,,,12:48 PM - 1:19 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-02-18,7:35 AM,2025-02-18,4:02 PM,Approved,8.45,0.50,7.95,7.95,0,0,0,No,,,,1:00 PM - 1:31 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-02-18,8:32 AM,2025-02-18,5:00 PM,Approved,8.47,0.53,7.94,7.94,0,0,0,No,,,,1:53 PM - 2:26 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-02-18,9:09 AM,2025-02-18,5:26 PM,Approved,8.28,0.50,7.78,7.78,0,0,0,No,,,,1:53 PM - 2:23 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-02-18,10:13 AM,2025-02-18,2:14 PM,Approved,4.02,0,4.02,4.02,0,0,0,No,,,,,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-02-19,7:23 AM,2025-02-19,3:58 PM,Approved,8.58,0.52,8.06,8,0.06,0,0,No,,,,12:37 PM - 1:09 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-02-19,7:24 AM,2025-02-19,4:02 PM,Approved,8.63,0.58,8.05,8,0.05,0,0,No,,,,12:49 PM - 1:25 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-02-19,7:34 AM,2025-02-19,4:06 PM,Approved,8.53,0.50,8.03,8,0.03,0,0,No,,,,12:50 PM - 1:20 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-02-19,8:30 AM,2025-02-19,5:00 PM,Approved,8.50,0.55,7.95,7.95,0,0,0,No,,,,2:25 PM - 2:58 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-02-19,9:00 AM,2025-02-19,3:00 PM,Approved,6,0,6,6,0,0,0,No,,,,,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-02-19,10:10 AM,2025-02-19,3:13 PM,Approved,5.05,0,5.05,5.05,0,0,0,No,,,,,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-02-20,7:20 AM,2025-02-20,4:08 PM,Approved,8.80,0.50,8.30,8,0.30,0,0,No,,,Forgot to clock back in from lunch,12:30 PM - 1:00 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-02-20,7:30 AM,2025-02-20,4:02 PM,Approved,8.53,0.53,8,8,0,0,0,No,,,,12:53 PM - 1:25 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-02-20,7:33 AM,2025-02-20,4:06 PM,Approved,8.55,0.50,8.05,8,0.05,0,0,No,,,,12:53 PM - 1:23 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-02-20,8:30 AM,2025-02-20,5:00 PM,Approved,8.50,0.53,7.97,7.97,0,0,0,No,,,,2:15 PM - 2:48 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-02-20,9:00 AM,2025-02-20,5:19 PM,Approved,8.32,0.50,7.82,7.82,0,0,0,No,,,,2:03 PM - 2:33 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-02-20,10:21 AM,2025-02-20,1:51 PM,Approved,3.50,0,3.50,3.50,0,0,0,No,,,,,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-02-21,7:29 AM,2025-02-21,4:02 PM,Approved,8.55,0.50,8.05,8,0.05,0,0,No,,,Go to maywood for delivery,12:30 PM - 1:00 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-02-21,7:29 AM,2025-02-21,4:02 PM,Approved,8.55,0.52,8.03,8,0.03,0,0,No,,,,12:35 PM - 1:07 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-02-21,8:25 AM,2025-02-21,4:03 PM,Approved,7.63,0.50,7.13,7.13,0,0,0,No,,,,1:03 PM - 1:33 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-02-21,8:30 AM,2025-02-21,4:02 PM,Approved,7.53,0.52,7.01,7.01,0,0,0,No,,,,1:53 PM - 2:25 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-02-21,9:01 AM,2025-02-21,3:13 PM,Approved,6.20,0.50,5.70,5.70,0,0,0,No,,,,1:49 PM - 2:19 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-02-21,10:45 AM,2025-02-21,2:00 PM,Approved,3.25,0,3.25,3.25,0,0,0,No,,,did not get my punch in but got my punch out,,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-02-24,7:29 AM,2025-02-24,4:00 PM,Approved,8.52,0.50,8.02,8,0.02,0,0,No,,,,12:39 PM - 1:09 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-02-24,7:31 AM,2025-02-24,4:01 PM,Approved,8.50,0.52,7.98,7.98,0,0,0,No,,,,12:30 PM - 1:02 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-02-24,7:38 AM,2025-02-24,4:06 PM,Approved,8.47,0.58,7.89,7.89,0,0,0,No,,,,12:49 PM - 1:25 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-02-24,8:30 AM,2025-02-24,5:00 PM,Approved,8.50,0.55,7.95,7.95,0,0,0,No,,,,2:09 PM - 2:42 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-02-25,7:30 AM,2025-02-25,4:02 PM,Approved,8.53,0.52,8.01,8,0.01,0,0,No,,,,12:55 PM - 1:26 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-02-25,7:36 AM,2025-02-25,4:05 PM,Approved,8.48,0.58,7.90,7.90,0,0,0,No,,,,12:58 PM - 1:33 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-02-25,8:30 AM,2025-02-25,5:00 PM,Approved,8.50,0.52,7.98,7.98,0,0,0,No,,,,1:57 PM - 2:29 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-02-25,9:04 AM,2025-02-25,5:31 PM,Approved,8.45,0.50,7.95,7.95,0,0,0,No,,,,2:00 PM - 2:30 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-02-25,10:41 AM,2025-02-25,3:26 PM,Approved,4.75,0,4.75,4.75,0,0,0,No,,,,,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-02-26,7:28 AM,2025-02-26,4:00 PM,Approved,8.53,0.50,8.03,8,0.03,0,0,No,,,,12:45 PM - 1:15 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-02-26,7:32 AM,2025-02-26,4:12 PM,Approved,8.67,0.50,8.17,8,0.17,0,0,No,,,,12:37 PM - 1:08 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-02-26,7:32 AM,2025-02-26,4:03 PM,Approved,8.52,0.50,8.02,8,0.02,0,0,No,,,,12:43 PM - 1:14 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-02-26,8:30 AM,2025-02-26,5:00 PM,Approved,8.50,0.53,7.97,7.97,0,0,0,No,,,,1:54 PM - 2:26 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-02-26,9:00 AM,2025-02-26,3:02 PM,Approved,6.03,0,6.03,6.03,0,0,0,No,,,,,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-02-27,7:29 AM,2025-02-27,4:00 PM,Approved,8.52,0.50,8.02,8,0.02,0,0,No,,,,12:46 PM - 1:16 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-02-27,7:29 AM,2025-02-27,4:00 PM,Approved,8.52,0.58,7.94,7.94,0,0,0,No,,,,12:37 PM - 1:13 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-02-27,7:36 AM,2025-02-27,3:37 PM,Approved,8.02,0.52,7.50,7.50,0,0,0,No,,,,12:43 PM - 1:14 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-02-27,8:30 AM,2025-02-27,5:00 PM,Approved,8.50,0.52,7.98,7.98,0,0,0,No,,,,2:01 PM - 2:33 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-02-27,9:02 AM,2025-02-27,5:32 PM,Approved,8.50,0.50,8,8,0,0,0,No,,,,1:25 PM - 1:55 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-02-27,10:30 AM,2025-02-27,3:25 PM,Approved,4.92,0,4.92,4.92,0,0,0,No,,,,,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-02-28,7:24 AM,2025-02-28,4:06 PM,Approved,8.70,0.50,8.20,8,0.20,0,0,No,,,,12:45 PM - 1:15 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-02-28,7:37 AM,2025-02-28,4:04 PM,Approved,8.45,0.50,7.95,7.95,0,0,0,No,,,,12:29 PM - 12:59 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-02-28,7:38 AM,2025-02-28,4:15 PM,Approved,8.62,0.52,8.10,8,0.10,0,0,No,,,,12:27 PM - 12:58 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-02-28,8:30 AM,2025-02-28,5:01 PM,Approved,8.52,0.53,7.99,7.99,0,0,0,No,,,,1:36 PM - 2:09 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-02-28,9:00 AM,2025-02-28,4:38 PM,Approved,7.63,0.50,7.13,7.13,0,0,0,No,,,,1:59 PM - 2:29 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-02-28,10:11 AM,2025-02-28,1:15 PM,Approved,3.07,0,3.07,3.07,0,0,0,No,,,,,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-03-03,7:29 AM,2025-03-03,4:11 PM,Approved,8.70,0.50,8.20,8,0.20,0,0,No,,,,12:32 PM - 1:02 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-03-03,7:29 AM,2025-03-03,4:06 PM,Approved,8.62,0.58,8.04,8,0.04,0,0,No,,,,12:45 PM - 1:21 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-03-03,7:30 AM,2025-03-03,4:00 PM,Approved,8.50,0.50,8,8,0,0,0,No,,,,12:53 PM - 1:23 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-03-03,8:30 AM,2025-03-03,5:00 PM,Approved,8.50,0.53,7.97,7.97,0,0,0,No,,,,1:55 PM - 2:28 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-03-03,9:01 AM,2025-03-03,5:34 PM,Approved,8.55,0.50,8.05,8,0.05,0,0,No,,,,2:02 PM - 2:32 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-03-03,11:04 AM,2025-03-03,3:09 PM,Approved,4.07,0,4.07,4.07,0,0,0,No,,,,,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-03-04,7:25 AM,2025-03-04,3:59 PM,Approved,8.57,0.52,8.05,8,0.05,0,0,No,,,,12:57 PM - 1:29 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-03-04,7:26 AM,2025-03-04,4:03 PM,Approved,8.62,0.52,8.10,8,0.10,0,0,No,,,,12:45 PM - 1:17 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-03-04,8:26 AM,2025-03-04,4:33 PM,Approved,8.13,0.50,7.63,7.63,0,0,0,No,,,,1:54 PM - 2:24 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-03-04,8:30 AM,2025-03-04,5:00 PM,Approved,8.50,0.55,7.95,7.95,0,0,0,No,,,,1:49 PM - 2:22 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-03-04,9:03 AM,2025-03-04,4:26 PM,Approved,7.38,0.50,6.88,6.88,0,0,0,No,,,,1:53 PM - 2:23 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-03-04,10:24 AM,2025-03-04,4:25 PM,Approved,6.02,0,6.02,6.02,0,0,0,No,,,,,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-03-05,7:30 AM,2025-03-05,3:30 PM,Approved,8,0.50,7.50,7.50,0,0,0,No,,,Was at sanbernadino,12:00 PM - 12:30 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-03-05,7:32 AM,2025-03-05,3:34 PM,Approved,8.03,0.57,7.46,7.46,0,0,0,No,,,,12:49 PM - 1:24 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-03-05,7:33 AM,2025-03-05,3:14 PM,Approved,7.68,0.50,7.18,7.18,0,0,0,No,,,,12:41 PM - 1:11 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-03-05,8:30 AM,2025-03-05,5:00 PM,Approved,8.50,0.55,7.95,7.95,0,0,0,No,,,Forgot to clock out,2:13 PM - 2:46 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-03-05,9:01 AM,2025-03-05,3:00 PM,Approved,5.98,0,5.98,5.98,0,0,0,No,,,App Didn’t Catch It,,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-03-05,10:33 AM,2025-03-05,3:43 PM,Approved,5.17,0,5.17,5.17,0,0,0,No,,,,,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-03-06,7:28 AM,2025-03-06,4:09 PM,Approved,8.68,0.52,8.16,8,0.16,0,0,No,,,,12:51 PM - 1:23 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-03-06,7:29 AM,2025-03-06,4:02 PM,Approved,8.55,0.52,8.03,8,0.03,0,0,No,,,,1:01 PM - 1:32 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-03-06,8:26 AM,2025-03-06,4:00 PM,Approved,7.58,0.50,7.08,7.08,0,0,0,No,,,,1:09 PM - 1:39 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-03-06,8:30 AM,2025-03-06,5:00 PM,Approved,8.50,0.55,7.95,7.95,0,0,0,No,,,,1:55 PM - 2:28 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-03-06,8:59 AM,2025-03-06,4:10 PM,Approved,7.18,0.50,6.68,6.68,0,0,0,No,,,,1:45 PM - 2:15 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-03-06,10:19 AM,2025-03-06,1:58 PM,Approved,3.65,0,3.65,3.65,0,0,0,No,,,,,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-03-07,7:30 AM,2025-03-07,4:27 PM,Approved,8.95,0.52,8.43,8,0.43,0,0,No,,,,12:54 PM - 1:25 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-03-07,7:37 AM,2025-03-07,4:48 PM,Approved,9.18,0.55,8.63,8,0.63,0,0,No,,,,12:47 PM - 1:21 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-03-07,8:00 AM,2025-03-07,4:30 PM,Approved,8.50,0.50,8,8,0,0,0,No,,,,1:32 PM - 2:03 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-03-07,8:30 AM,2025-03-07,5:00 PM,Approved,8.50,0.57,7.93,7.93,0,0,0,No,,,,2:18 PM - 2:52 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-03-07,9:00 AM,2025-03-07,4:30 PM,Approved,7.50,0.50,7,7,0,0,0,No,,,,2:15 PM - 2:45 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-03-07,10:22 AM,2025-03-07,4:33 PM,Approved,6.18,0.47,5.71,5.71,0,0,0,No,,,Merged 2 clock entries: 10:22am-2:50pm/3:18pm-4:33pm,2:50 PM - 3:18 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-03-10,7:24 AM,2025-03-10,4:15 PM,Approved,8.85,0.52,8.33,8,0.33,0,0,No,,,,1:01 PM - 1:33 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-03-10,7:55 AM,2025-03-10,9:00 AM,Approved,1.08,0,1.08,1.08,0,0,0,No,,,Went home sick didn’t realize I never clocked out,,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-03-10,8:30 AM,2025-03-10,5:01 PM,Approved,8.52,0.53,7.99,7.99,0,0,0,No,,,,2:09 PM - 2:41 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-03-10,9:01 AM,2025-03-10,5:27 PM,Approved,8.43,0.50,7.93,7.93,0,0,0,No,,,,1:58 PM - 2:28 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-03-11,7:28 AM,2025-03-11,4:10 PM,Approved,8.70,0.50,8.20,8,0.20,0,0,No,,,,1:49 PM - 2:20 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-03-11,7:29 AM,2025-03-11,4:02 PM,Approved,8.55,0.52,8.03,8,0.03,0,0,No,,,,12:57 PM - 1:28 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-03-11,7:34 AM,2025-03-11,4:02 PM,Approved,8.47,0.52,7.95,7.95,0,0,0,No,,,,12:35 PM - 1:06 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-03-11,8:30 AM,2025-03-11,5:00 PM,Approved,8.50,0.52,7.98,7.98,0,0,0,No,,,,1:42 PM - 2:14 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-03-11,9:01 AM,2025-03-11,5:10 PM,Approved,8.15,0.50,7.65,7.65,0,0,0,No,,,,1:27 PM - 1:57 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-03-11,10:40 AM,2025-03-11,3:28 PM,Approved,4.80,0,4.80,4.80,0,0,0,No,,,,,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-03-12,7:28 AM,2025-03-12,4:04 PM,Approved,8.60,0.58,8.02,8,0.02,0,0,No,,,,12:45 PM - 1:20 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-03-12,7:30 AM,2025-03-12,4:00 PM,Approved,8.50,0.50,8,8,0,0,0,No,,,I forgot to clock out of lunch.,12:30 PM - 1:00 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-03-12,7:41 AM,2025-03-12,4:17 PM,Approved,8.60,0.50,8.10,8,0.10,0,0,No,,,,12:31 PM - 1:01 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-03-12,8:30 AM,2025-03-12,5:00 PM,Approved,8.50,0.53,7.97,7.97,0,0,0,No,,,,2:03 PM - 2:35 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-03-12,9:00 AM,2025-03-12,2:58 PM,Approved,5.97,0,5.97,5.97,0,0,0,No,,,Accidentally Must Have Punched Out For Break Instead Of Clocking Out,,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-03-12,11:11 AM,2025-03-12,3:30 PM,Approved,4.32,0,4.32,4.32,0,0,0,No,,,,,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-03-13,7:25 AM,2025-03-13,4:03 PM,Approved,8.63,0.50,8.13,8,0.13,0,0,No,,,,12:44 PM - 1:14 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-03-13,7:28 AM,2025-03-13,4:09 PM,Approved,8.68,0.50,8.18,8,0.18,0,0,No,,,,12:41 PM - 1:12 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-03-13,7:30 AM,2025-03-13,4:03 PM,Approved,8.55,0.82,7.73,7.73,0,0,0,No,,,,12:31 PM - 1:21 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-03-13,8:29 AM,2025-03-13,5:01 PM,Approved,8.53,0.55,7.98,7.98,0,0,0,No,,,,1:51 PM - 2:25 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-03-13,9:00 AM,2025-03-13,5:02 PM,Approved,8.03,0.50,7.53,7.53,0,0,0,No,,,,1:54 PM - 2:24 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-03-13,10:28 AM,2025-03-13,2:50 PM,Approved,4.37,0,4.37,4.37,0,0,0,No,,,,,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-03-14,7:21 AM,2025-03-14,4:03 PM,Approved,8.70,0.52,8.18,8,0.18,0,0,No,,,,12:57 PM - 1:29 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-03-14,7:36 AM,2025-03-14,3:20 PM,Approved,7.73,0.50,7.23,7.23,0,0,0,No,,,,1:10 PM - 1:40 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-03-14,8:30 AM,2025-03-14,5:00 PM,Approved,8.50,0.57,7.93,7.93,0,0,0,No,,,,2:08 PM - 2:43 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-03-14,9:00 AM,2025-03-14,2:01 PM,Approved,5.02,0,5.02,5.02,0,0,0,No,,,,,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-03-14,10:39 AM,2025-03-14,2:40 PM,Approved,4.02,0,4.02,4.02,0,0,0,No,,,,,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-03-17,7:26 AM,2025-03-17,4:02 PM,Approved,8.60,0.52,8.08,8,0.08,0,0,No,,,,1:13 PM - 1:44 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-03-17,7:29 AM,2025-03-17,4:01 PM,Approved,8.53,0.50,8.03,8,0.03,0,0,No,,,,1:10 PM - 1:41 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-03-17,7:30 AM,2025-03-17,4:01 PM,Approved,8.52,0.50,8.02,8,0.02,0,0,No,,,,12:44 PM - 1:14 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-03-17,8:30 AM,2025-03-17,5:00 PM,Approved,8.50,0.55,7.95,7.95,0,0,0,No,,,,1:58 PM - 2:32 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-03-17,9:01 AM,2025-03-17,5:30 PM,Approved,8.48,0.50,7.98,7.98,0,0,0,No,,,,2:16 PM - 2:46 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-03-18,7:29 AM,2025-03-18,4:00 PM,Approved,8.52,0.52,8,8,0,0,0,No,,,,12:57 PM - 1:28 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-03-18,7:32 AM,2025-03-18,4:09 PM,Approved,8.62,0.55,8.07,8,0.07,0,0,No,,,,1:07 PM - 1:40 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-03-18,7:53 AM,2025-03-18,4:07 PM,Approved,8.23,0.50,7.73,7.73,0,0,0,No,,,,12:35 PM - 1:05 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-03-18,8:30 AM,2025-03-18,5:01 PM,Approved,8.52,0.55,7.97,7.97,0,0,0,No,,,,2:09 PM - 2:42 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-03-18,9:01 AM,2025-03-18,5:30 PM,Approved,8.48,0.50,7.98,7.98,0,0,0,No,,,Missed Clock Out,2:00 PM - 2:30 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-03-18,10:04 AM,2025-03-18,2:38 PM,Approved,4.57,0,4.57,4.57,0,0,0,No,,,,,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-03-19,7:34 AM,2025-03-19,4:11 PM,Approved,8.62,0.57,8.05,8,0.05,0,0,No,,,,1:17 PM - 1:51 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-03-19,7:36 AM,2025-03-19,4:00 PM,Approved,8.40,0.55,7.85,7.85,0,0,0,No,,,,1:08 PM - 1:41 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-03-19,9:00 AM,2025-03-19,3:00 PM,Approved,6,0.17,5.83,5.83,0,0,0,No,,,Missed Punch,12:00 PM - 12:10 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-03-19,9:24 AM,2025-03-19,4:24 PM,Approved,7,0.50,6.50,6.50,0,0,0,No,,,On the road couldn’t punch out for lunch,1:24 PM - 1:54 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-03-19,12:16 PM,2025-03-19,6:11 PM,Approved,5.92,0,5.92,5.92,0,0,0,No,,,,,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-03-20,7:30 AM,2025-03-20,4:05 PM,Approved,8.58,0.50,8.08,8,0.08,0,0,No,,,Attended dtlb/Belmont delivery,1:20 PM - 1:50 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-03-20,7:43 AM,2025-03-20,4:01 PM,Approved,8.30,0.50,7.80,7.80,0,0,0,No,,,,12:53 PM - 1:24 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-03-20,8:25 AM,2025-03-20,4:10 PM,Approved,7.75,0.50,7.25,7.25,0,0,0,No,,,,12:55 PM - 1:25 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-03-20,8:30 AM,2025-03-20,5:00 PM,Approved,8.50,0.52,7.98,7.98,0,0,0,No,,,,1:42 PM - 2:13 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-03-20,9:00 AM,2025-03-20,5:31 PM,Approved,8.52,0.50,8.02,8,0.02,0,0,No,,,,2:06 PM - 2:37 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-03-20,10:09 AM,2025-03-20,2:51 PM,Approved,4.70,0,4.70,4.70,0,0,0,No,,,,,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-03-21,7:33 AM,2025-03-21,4:08 PM,Approved,8.58,0.52,8.06,8,0.06,0,0,No,,,,1:16 PM - 1:47 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-03-21,7:34 AM,2025-03-21,4:04 PM,Approved,8.50,0.58,7.92,7.92,0,0,0,No,,,,1:04 PM - 1:40 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-03-21,7:40 AM,2025-03-21,4:24 PM,Approved,8.73,0.50,8.23,8,0.23,0,0,No,,,,1:05 PM - 1:36 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-03-21,8:30 AM,2025-03-21,5:00 PM,Approved,8.50,0.53,7.97,7.97,0,0,0,No,,,,1:42 PM - 2:14 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-03-21,9:02 AM,2025-03-21,5:16 PM,Approved,8.23,0.55,7.68,7.68,0,0,0,No,,,,1:41 PM - 2:14 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-03-21,9:56 AM,2025-03-21,1:51 PM,Approved,3.92,0,3.92,3.92,0,0,0,No,,,,,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-03-24,7:28 AM,2025-03-24,4:14 PM,Approved,8.77,0.50,8.27,8,0.27,0,0,No,,,,1:16 PM - 1:47 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-03-24,7:28 AM,2025-03-24,4:02 PM,Approved,8.57,0.50,8.07,8,0.07,0,0,No,,,,12:47 PM - 1:18 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-03-24,7:45 AM,2025-03-24,4:01 PM,Approved,8.27,0.55,7.72,7.72,0,0,0,No,,,,12:59 PM - 1:33 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-03-24,8:30 AM,2025-03-24,8:02 PM,Approved,11.53,0.53,11,8,3,0,0,No,,,,1:46 PM - 2:19 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-03-24,9:00 AM,2025-03-24,6:12 PM,Approved,9.20,0.50,8.70,8,0.70,0,0,No,,,,1:55 PM - 2:25 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-03-25,6:28 AM,2025-03-25,4:00 PM,Approved,9.53,0.52,9.02,8,1.02,0,0,No,,,,12:03 PM - 12:35 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-03-25,7:29 AM,2025-03-25,3:59 PM,Approved,8.50,0.55,7.95,7.95,0,0,0,No,,,,12:39 PM - 1:13 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-03-25,7:39 AM,2025-03-25,4:14 PM,Approved,8.58,0.50,8.08,8,0.08,0,0,No,,,,12:34 PM - 1:04 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-03-25,8:30 AM,2025-03-25,7:39 PM,Approved,11.15,0.50,10.65,8,2.65,0,0,No,,,,1:36 PM - 2:07 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-03-25,8:31 AM,2025-03-25,5:41 PM,Approved,9.15,0.50,8.65,8,0.65,0,0,No,,,,1:29 PM - 1:59 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-03-25,10:19 AM,2025-03-25,4:04 PM,Approved,5.75,0,5.75,5.75,0,0,0,No,,,,,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-03-26,7:28 AM,2025-03-26,4:04 PM,Approved,8.60,0.57,8.03,8,0.03,0,0,No,,,,12:42 PM - 1:16 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-03-26,7:30 AM,2025-03-26,4:01 PM,Approved,8.52,0.52,8,8,0,0,0,No,,,,12:54 PM - 1:26 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-03-26,7:38 AM,2025-03-26,4:01 PM,Approved,8.38,0.50,7.88,7.88,0,0,0,No,,,,12:51 PM - 1:22 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-03-26,8:30 AM,2025-03-26,8:03 PM,Approved,11.55,0.55,11,8,3,0,0,No,,,,1:57 PM - 2:30 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-03-26,9:00 AM,2025-03-26,3:01 PM,Approved,6.02,0,6.02,6.02,0,0,0,No,,,,,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-03-26,9:12 AM,2025-03-26,2:18 PM,Approved,5.10,0,5.10,5.10,0,0,0,No,,,,,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-03-27,7:27 AM,2025-03-27,4:02 PM,Approved,8.58,0.53,8.05,8,0.05,0,0,No,,,,1:01 PM - 1:34 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-03-27,7:34 AM,2025-03-27,10:35 AM,Approved,3.02,0,3.02,3.02,0,0,0,No,,,Went to urgent care. Was told to stay clocked in assuming I’d be back but was sent to ER,,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-03-27,7:34 AM,2025-03-27,4:09 PM,Approved,8.58,0.57,8.01,8,0.01,0,0,No,,,,1:20 PM - 1:54 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-03-27,8:30 AM,2025-03-27,5:02 PM,Approved,8.53,0.53,8,8,0,0,0,No,,,,1:34 PM - 2:07 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-03-27,8:30 AM,2025-03-27,5:01 PM,Approved,8.52,0.50,8.02,8,0.02,0,0,No,,,,1:43 PM - 2:13 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-03-27,9:55 AM,2025-03-27,2:50 PM,Approved,4.92,0,4.92,4.92,0,0,0,No,,,,,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-03-28,7:04 AM,2025-03-28,3:33 PM,Approved,8.48,0.50,7.98,7.98,0,0,0,No,,,,12:47 PM - 1:17 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-03-28,7:28 AM,2025-03-28,4:02 PM,Approved,8.57,0.50,8.07,8,0.07,0,0,No,,,,12:46 PM - 1:17 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-03-28,8:30 AM,2025-03-28,5:00 PM,Approved,8.50,0.55,7.95,7.95,0,0,0,No,,,,1:39 PM - 2:13 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-03-28,8:58 AM,2025-03-28,11:58 AM,Approved,3,0.17,2.83,2.83,0,0,0,No,,,Phone messing up/ Clocked me out,9:20 AM - 9:30 AM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-03-28,9:00 AM,2025-03-28,5:31 PM,Approved,8.52,0.50,8.02,8,0.02,0,0,No,,,,1:52 PM - 2:22 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-03-29,11:56 AM,2025-03-29,2:50 PM,Approved,2.88,0,2.88,0.05,0,0,2.83,No,,,,,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-03-31,7:26 AM,2025-03-31,4:08 PM,Approved,8.70,0.52,8.18,8,0.18,0,0,No,,,,1:11 PM - 1:43 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-03-31,7:29 AM,2025-03-31,4:09 PM,Approved,8.67,0.50,8.17,8,0.17,0,0,No,,,,12:46 PM - 1:16 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-03-31,7:36 AM,2025-03-31,5:13 PM,Approved,9.62,0.58,9.03,8,1.03,0,0,No,,,,12:54 PM - 1:30 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-03-31,8:30 AM,2025-03-31,7:53 PM,Approved,11.38,0.57,10.82,8,2.82,0,0,No,,,,2:05 PM - 2:39 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-04-01,6:12 AM,2025-04-01,4:06 PM,Approved,9.90,0.53,9.37,8,1.37,0,0,No,,,,11:39 AM - 12:12 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-04-01,6:15 AM,2025-04-01,4:00 PM,Approved,9.75,0.50,9.25,8,1.25,0,0,No,,,Phone app not working properly,11:00 AM - 11:30 AM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-04-01,7:35 AM,2025-04-01,4:05 PM,Approved,8.50,0.50,8,8,0,0,0,No,,,,12:26 PM - 12:56 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-04-01,8:30 AM,2025-04-01,7:05 PM,Approved,10.58,0.52,10.07,8,2.07,0,0,No,,,,1:44 PM - 2:16 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-04-01,9:45 AM,2025-04-01,2:48 PM,Approved,5.03,0,5.03,5.03,0,0,0,No,,,,,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-04-02,7:11 AM,2025-04-02,3:59 PM,Approved,8.80,0.55,8.25,8,0.25,0,0,No,,,,1:07 PM - 1:41 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-04-02,7:30 AM,2025-04-02,4:05 PM,Approved,8.58,0.50,8.08,8,0.08,0,0,No,,,,12:34 PM - 1:04 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-04-02,7:33 AM,2025-04-02,3:59 PM,Approved,8.43,0.50,7.93,7.93,0,0,0,No,,,,12:37 PM - 1:07 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-04-02,8:30 AM,2025-04-02,5:00 PM,Approved,8.50,0.52,7.98,7.98,0,0,0,No,,,,2:01 PM - 2:32 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-04-02,9:07 AM,2025-04-02,1:47 PM,Approved,4.67,0,4.67,4.67,0,0,0,No,,,,,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-04-03,7:28 AM,2025-04-03,3:58 PM,Approved,8.50,0.55,7.95,7.95,0,0,0,No,,,,12:40 PM - 1:13 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-04-03,7:31 AM,2025-04-03,4:01 PM,Approved,8.50,0.50,8,8,0,0,0,No,,,,12:39 PM - 1:09 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-04-03,7:52 AM,2025-04-03,4:23 PM,Approved,8.52,0.50,8.02,8,0.02,0,0,No,,,,12:55 PM - 1:25 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-04-03,8:30 AM,2025-04-03,5:00 PM,Approved,8.50,0.50,8,8,0,0,0,No,,,,1:58 PM - 2:29 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-04-03,9:22 AM,2025-04-03,2:05 PM,Approved,4.72,0,4.72,4.72,0,0,0,No,,,,,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-04-04,7:24 AM,2025-04-04,4:03 PM,Approved,8.65,0.50,8.15,8,0.15,0,0,No,,,,1:04 PM - 1:35 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-04-04,7:24 AM,2025-04-04,5:03 PM,Approved,9.65,0.57,9.08,8,1.08,0,0,No,,,,1:11 PM - 1:45 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-04-04,8:30 AM,2025-04-04,5:04 PM,Approved,8.57,0.55,8.02,8,0.02,0,0,No,,,,1:27 PM - 2:00 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-04-04,9:09 AM,2025-04-04,2:58 PM,Approved,5.82,0,5.82,5.82,0,0,0,No,,,,,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-04-04,10:46 AM,2025-04-04,3:25 PM,Approved,4.65,0,4.65,4.65,0,0,0,No,,,,,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-04-05,7:30 AM,2025-04-05,2:33 PM,Approved,7.05,0.50,6.55,0.02,0,0,6.53,No,,,,1:04 PM - 1:35 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-04-06,9:04 AM,2025-04-06,12:06 PM,Approved,3.03,0,3.03,3.03,0,0,0,No,,,,,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-04-07,5:40 AM,2025-04-07,4:03 PM,Approved,10.38,0.55,9.83,8,1.83,0,0,No,,,Clock out recorded as break,11:30 AM - 12:03 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-04-07,6:32 AM,2025-04-07,4:00 PM,Approved,9.47,0.53,8.93,8,0.93,0,0,No,,,,12:00 PM - 12:32 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-04-07,7:37 AM,2025-04-07,4:02 PM,Approved,8.42,0.50,7.92,7.92,0,0,0,No,,,,12:39 PM - 1:09 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-04-07,7:51 AM,2025-04-07,6:52 PM,Approved,11.02,0.53,10.48,8,2.48,0,0,No,,,,1:40 PM - 2:12 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-04-07,11:48 AM,2025-04-07,3:25 PM,Approved,3.62,0,3.62,3.62,0,0,0,No,,,,,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-04-08,4:59 AM,2025-04-08,4:00 PM,Approved,11.02,0.62,10.40,8,2.40,0,0,No,,,Clock out from yesterday submitted as break which clocked me in from break today,10:48 AM - 11:25 AM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-04-08,6:00 AM,2025-04-08,5:08 PM,Approved,11.13,0.53,10.60,8,2.60,0,0,No,,,,11:52 AM - 12:25 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-04-08,6:35 AM,2025-04-08,4:20 PM,Approved,9.75,0.50,9.25,8,1.25,0,0,No,,,Assisted distro delivery to Los Al,12:17 PM - 12:47 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-04-08,7:35 AM,2025-04-08,4:25 PM,Approved,8.83,0.50,8.33,8,0.33,0,0,No,,,,1:31 PM - 2:01 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-04-09,5:17 AM,2025-04-09,3:55 PM,Approved,10.62,0.53,10.08,8,2.08,0,0,No,,,,10:17 AM - 10:49 AM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-04-09,6:03 AM,2025-04-09,4:58 PM,Approved,10.93,0.52,10.42,8,2.42,0,0,No,,,,11:10 AM - 11:41 AM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-04-09,7:27 AM,2025-04-09,6:00 PM,Approved,10.55,0.50,10.05,8,2.05,0,0,No,,,Assisted San bern delivery./stayed late,12:30 PM - 1:00 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-04-09,7:44 AM,2025-04-09,5:17 PM,Approved,9.55,0.50,9.05,8,1.05,0,0,No,,,,12:38 PM - 1:08 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-04-09,10:39 AM,2025-04-09,3:51 PM,Approved,5.20,0,5.20,5.20,0,0,0,No,,,,,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-04-10,5:19 AM,2025-04-10,4:00 PM,Approved,10.68,0.50,10.18,8,2.18,0,0,No,,,Clock out didnt work,10:30 AM - 11:00 AM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-04-10,6:01 AM,2025-04-10,5:05 PM,Approved,11.07,0.52,10.55,8,2.55,0,0,No,,,,11:52 AM - 12:24 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-04-10,6:41 AM,2025-04-10,4:51 PM,Approved,10.17,0.50,9.67,8,1.67,0,0,No,,,Glass meeting w/ Josh,12:22 PM - 12:52 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-04-10,7:35 AM,2025-04-10,4:53 PM,Approved,9.30,0.50,8.80,8,0.80,0,0,No,,,,12:37 PM - 1:08 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-04-10,10:29 AM,2025-04-10,3:28 PM,Approved,4.98,0,4.98,4.98,0,0,0,No,,,,,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-04-11,5:21 AM,2025-04-11,4:01 PM,Approved,10.67,0.55,10.12,8,2.12,0,0,No,,,,10:10 AM - 10:43 AM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-04-11,6:00 AM,2025-04-11,5:06 PM,Approved,11.12,0.53,10.58,8,2.58,0,0,No,,,,10:50 AM - 11:22 AM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-04-11,6:36 AM,2025-04-11,5:19 PM,Approved,10.70,0.53,10.17,4.97,2.17,0,3.03,No,,,,12:25 PM - 12:57 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-04-11,8:46 AM,2025-04-11,4:09 PM,Approved,7.38,0.50,6.88,6.88,0,0,0,No,,,,12:50 PM - 1:20 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-04-11,10:31 AM,2025-04-11,2:52 PM,Approved,4.35,0,4.35,4.35,0,0,0,No,,,,,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-04-12,9:03 AM,2025-04-12,12:06 PM,Approved,3.05,0,3.05,0,0,0,3.05,No,,,,,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-04-12,12:40 PM,2025-04-12,2:45 PM,Approved,2.08,0,2.08,0,2.08,0,0,No,,,,,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-04-14,6:35 AM,2025-04-14,4:01 PM,Approved,9.43,0.55,8.88,8,0.88,0,0,No,,,,12:29 PM - 1:02 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-04-14,6:54 AM,2025-04-14,8:16 PM,Approved,13.37,3.50,9.87,8,1.87,0,0,No,,,Merged 2 clock entries: 6:54am-3:03 / 6:01pm-8:16pm,12:38 PM - 1:10 PM - 1st 30-minute Break  3:03 PM - 6:01 PM - 2nd 30 minute break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-04-14,7:19 AM,2025-04-14,4:12 PM,Approved,8.88,0.53,8.35,8,0.35,0,0,No,,,,12:53 PM - 1:25 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-04-14,9:00 AM,2025-04-14,1:48 PM,Approved,4.80,0,4.80,4.80,0,0,0,No,,,,,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-04-15,7:27 AM,2025-04-15,4:01 PM,Approved,8.57,0.55,8.02,8,0.02,0,0,No,,,,11:20 AM - 11:54 AM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-04-15,7:32 AM,2025-04-15,4:47 PM,Approved,9.25,0.55,8.70,8,0.70,0,0,No,,,,12:36 PM - 1:10 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-04-15,7:43 AM,2025-04-15,4:00 PM,Approved,8.28,0.50,7.78,7.78,0,0,0,No,,,,12:15 PM - 12:46 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-04-15,8:30 AM,2025-04-15,2:00 PM,Approved,5.50,0,5.50,5.50,0,0,0,No,,,Started break instead of clock out,,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-04-15,9:01 AM,2025-04-15,3:59 PM,Approved,6.97,0.50,6.47,6.47,0,0,0,No,,,,2:00 PM - 2:30 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-04-15,10:31 AM,2025-04-15,3:15 PM,Approved,4.73,0,4.73,4.73,0,0,0,No,,,,,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-04-16,7:30 AM,2025-04-16,3:55 PM,Approved,8.42,0.52,7.90,7.90,0,0,0,No,,,,12:57 PM - 1:29 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-04-16,7:33 AM,2025-04-16,4:14 PM,Approved,8.68,0.55,8.13,8,0.13,0,0,No,,,,12:57 PM - 1:30 PM - 1st 30-minute Break ,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-04-16,7:34 AM,2025-04-16,12:27 PM,Approved,4.88,0,4.88,4.88,0,0,0,No,,,,,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-04-16,8:33 AM,2025-04-16,7:03 PM,Approved,10.50,0.53,9.97,8,1.97,0,0,No,,,,2:08 PM - 2:41 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-04-16,9:11 AM,2025-04-16,1:32 PM,Approved,4.35,0,4.35,4.35,0,0,0,No,,,,,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-04-16,10:30 AM,2025-04-16,2:40 PM,Approved,4.17,0,4.17,4.17,0,0,0,No,,,forgot to punch in,,,0 
+William,Scott,,4972,Inventory Specialist,Distribution Center,2025-04-17,7:26 AM,2025-04-17,4:00 PM,Approved,8.57,0.50,8.07,8,0.07,0,0,No,,,,12:32 PM - 1:02 PM - 1st 30-minute Break ,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-04-17,7:29 AM,2025-04-17,3:58 PM,Approved,8.48,0.52,7.96,7.96,0,0,0,No,,,,12:59 PM - 1:30 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-04-17,7:31 AM,2025-04-17,4:10 PM,Approved,8.65,0.57,8.08,8,0.08,0,0,No,,,,12:52 PM - 1:26 PM - 1st 30-minute Break ,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-04-17,8:30 AM,2025-04-17,5:05 PM,Approved,8.58,0.52,8.06,8,0.06,0,0,No,,,,1:46 PM - 2:18 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-04-17,10:30 AM,2025-04-17,1:16 PM,Approved,2.77,0,2.77,2.77,0,0,0,No,,,,,,0 
+Adonis,Gadsden,,3347,Inventory Specialist,Distribution Center,2025-04-18,7:26 AM,2025-04-18,4:00 PM,Approved,8.57,0.53,8.04,8,0.04,0,0,No,,,,12:38 PM - 1:10 PM - 1st 30-minute Break ,,0 
+Kendall,Dixon,,344,Inventory Specialist,Distribution Center,2025-04-18,7:27 AM,2025-04-18,4:07 PM,Approved,8.67,0.53,8.14,8,0.14,0,0,No,,,,12:54 PM - 1:26 PM - 1st 30-minute Break ,,0 
+Ricky,Montoya Huerta,,7874,Inventory Specialist,Distribution Center,2025-04-18,7:28 AM,2025-04-18,12:24 PM,Approved,4.93,0,4.93,4.93,0,0,0,No,,,,,,0 
+Erik,Rodriguez,,2862,Inventory Specialist,Distribution Center,2025-04-18,8:30 AM,2025-04-18,5:00 PM,Approved,8.50,0.52,7.98,7.98,0,0,0,No,,,,1:30 PM - 2:01 PM - 1st 30-minute Break ,,0 
+Jesus,Renteria,,2726,Inventory Specialist,Distribution Center,2025-04-18,9:00 AM,2025-04-18,5:00 PM,Approved,8,0.50,7.50,7.50,0,0,0,No,,,,1:19 PM - 1:49 PM - 1st 30-minute Break ,,0 
