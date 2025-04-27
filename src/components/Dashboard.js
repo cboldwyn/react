@@ -276,13 +276,13 @@ const DATA_URLS = {
 // Main Dashboard Component
 const Dashboard = () => {
   // State handling with better organization
-  const [data, setData] = useState({
+  // Store the raw data that will be processed later
+  const [rawDataState, setRawDataState] = useState({
     products: null,
     salesOrders: null,
     purchaseOrders: null,
     clocks: null
   });
-  // Removed rawData, using data instead
   
   const [processedData, setProcessedData] = useState({
     casesPerLaborHour: [],
@@ -309,7 +309,7 @@ const Dashboard = () => {
   const loadCSV = useCallback(async (name, url) => {
     try {
       const csvData = await fetchCSVData(url);
-      setData(prev => ({ ...prev, [name]: csvData }));
+      setRawDataState(prev => ({ ...prev, [name]: csvData }));
       setLoadingState(prev => ({
         ...prev, 
         dataProgress: { ...prev.dataProgress, [name]: true }
@@ -717,6 +717,57 @@ const Dashboard = () => {
           aria-labelledby="efficiency-tab"
           className={`grid grid-cols-1 gap-6 ${activeTab !== 'efficiency' ? 'hidden' : ''}`}
         >
+          <div className="bg-white p-4 rounded shadow-md">
+            <h2 className="text-lg font-semibold mb-4">Cases Handled Per Labor Hour</h2>
+            <div className="h-96" aria-label="Line chart showing cases handled per labor hour by week">
+              <EfficiencyChart data={processedData.salesAndPOByWeek} />
+            </div>
+          </div>
+          
+          <div className="bg-white p-4 rounded shadow-md">
+            <h2 className="text-lg font-semibold mb-4">Labor Hours vs. Cases Handled</h2>
+            <div className="h-96" aria-label="Chart comparing labor hours against cases received and shipped">
+              <LaborVsCasesChart data={processedData.salesAndPOByWeek} />
+            </div>
+          </div>
+        </div>
+        
+        {/* Volume by Week Panel */}
+        <div 
+          id="volume-panel" 
+          role="tabpanel" 
+          aria-labelledby="volume-tab"
+          className={`grid grid-cols-1 gap-6 ${activeTab !== 'volume' ? 'hidden' : ''}`}
+        >
+          <div className="bg-white p-4 rounded shadow-md">
+            <h2 className="text-lg font-semibold mb-4">Cases Shipped and Received by Week</h2>
+            <div className="h-96" aria-label="Bar chart showing cases shipped and received by week">
+              <WeeklyVolumeChart data={processedData.salesAndPOByWeek} />
+            </div>
+          </div>
+          
+          <div className="bg-white p-4 rounded shadow-md">
+            <h2 className="text-lg font-semibold mb-4">Cumulative Cases Handled</h2>
+            <div className="h-96" aria-label="Area chart showing cumulative cases handled over time">
+              <CumulativeVolumeChart data={processedData.salesAndPOByWeek} />
+            </div>
+          </div>
+        </div>
+        
+        {/* Store Analysis Panel */}
+        <div 
+          id="stores-panel" 
+          role="tabpanel" 
+          aria-labelledby="stores-tab"
+          className={`grid grid-cols-1 gap-6 ${activeTab !== 'stores' ? 'hidden' : ''}`}
+        >
+          <div className="bg-white p-4 rounded shadow-md">
+            <h2 className="text-lg font-semibold mb-4">Top 10 Stores by Total Cases Shipped</h2>
+            <div className="h-96" aria-label="Horizontal bar chart showing top 10 stores by cases shipped">
+              <TopStoresChart data={topStoresData} />
+            </div>
+          </div>
+          
           <div className="bg-white p-4 rounded shadow-md">
             <h2 className="text-lg font-semibold mb-4">Cases Handled Per Labor Hour</h2>
             <div className="h-96" aria-label="Line chart showing cases handled per labor hour by week">
