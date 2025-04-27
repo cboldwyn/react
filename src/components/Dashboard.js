@@ -7,11 +7,6 @@ import Papa from 'papaparse';
 import _ from 'lodash';
 import { format, parseISO, getISOWeek, getYear, isValid } from 'date-fns';
 
-// Components for better code organization
-import LoadingSpinner from '../components/LoadingSpinner';
-import ErrorMessage from '../components/ErrorMessage';
-import ChartContainer from '../components/ChartContainer';
-
 // Utility function to handle date parsing with better error handling
 const getWeekNumber = (dateStr) => {
   try {
