@@ -4,8 +4,9 @@ import {
   Legend, ResponsiveContainer, ComposedChart, Area
 } from 'recharts';
 import Papa from 'papaparse';
-import _ from 'lodash';
-import { format, parseISO, getISOWeek, getYear, isValid } from 'date-fns';
+// Removed the unused lodash import (_)
+import { parseISO, getISOWeek, getYear, isValid } from 'date-fns';
+// Removed the unused format import
 
 // Utility function to handle date parsing with better error handling
 const getWeekNumber = (dateStr) => {
@@ -264,15 +265,24 @@ const StoresByWeekChart = ({ storeData, allStores }) => (
   </ResponsiveContainer>
 );
 
+// Move dataUrls outside the component to prevent it from being recreated on every render
+const DATA_URLS = {
+  products: '/data/Products2.csv',
+  salesOrders: '/data/SalesOrder.csv',
+  purchaseOrders: '/data/PO.csv',
+  clocks: '/data/Clocks.csv'
+};
+
 // Main Dashboard Component
 const Dashboard = () => {
   // State handling with better organization
-  const [rawData, setRawData] = useState({
+  const [data, setData] = useState({
     products: null,
     salesOrders: null,
     purchaseOrders: null,
     clocks: null
   });
+  // Removed rawData, using data instead
   
   const [processedData, setProcessedData] = useState({
     casesPerLaborHour: [],
@@ -295,24 +305,16 @@ const Dashboard = () => {
   
   const [activeTab, setActiveTab] = useState('efficiency');
 
-  // URLs for CSV files - in a real app, these would come from environment variables
-  const dataUrls = {
-    products: '/data/Products2.csv',
-    salesOrders: '/data/SalesOrder.csv',
-    purchaseOrders: '/data/PO.csv',
-    clocks: '/data/Clocks.csv'
-  };
-
   // Load a single CSV file with progress tracking
   const loadCSV = useCallback(async (name, url) => {
     try {
-      const data = await fetchCSVData(url);
-      setRawData(prev => ({ ...prev, [name]: data }));
+      const csvData = await fetchCSVData(url);
+      setData(prev => ({ ...prev, [name]: csvData }));
       setLoadingState(prev => ({
         ...prev, 
         dataProgress: { ...prev.dataProgress, [name]: true }
       }));
-      return data;
+      return csvData;
     } catch (error) {
       setLoadingState(prev => ({
         ...prev,
@@ -594,14 +596,14 @@ const Dashboard = () => {
         setLoadingState(prev => ({ ...prev, loading: true, error: null }));
         
         // Load products first (needed for other calculations)
-        const products = await loadCSV('products', dataUrls.products);
+        const products = await loadCSV('products', DATA_URLS.products);
         if (!products) return; // Stop if products failed to load
         
         // Load remaining data in parallel
         const [salesOrders, purchaseOrders, clocks] = await Promise.all([
-          loadCSV('salesOrders', dataUrls.salesOrders),
-          loadCSV('purchaseOrders', dataUrls.purchaseOrders),
-          loadCSV('clocks', dataUrls.clocks)
+          loadCSV('salesOrders', DATA_URLS.salesOrders),
+          loadCSV('purchaseOrders', DATA_URLS.purchaseOrders),
+          loadCSV('clocks', DATA_URLS.clocks)
         ]);
         
         // Check if all data was loaded successfully
@@ -621,7 +623,7 @@ const Dashboard = () => {
     };
     
     loadData();
-  }, [loadCSV, calculateMetrics, dataUrls]);
+  }, [loadCSV, calculateMetrics]);
 
   // Memoized derived data for performance
   const topStoresData = useMemo(() => {
@@ -767,8 +769,9 @@ const Dashboard = () => {
           </div>
           
           <div className="bg-white p-4 rounded shadow-md">
-            <h2 className="text-lg font-semibold mb-4">Cases Shipped by Store by Week</h2>
-<div className="h-96" aria-label="Line chart showing cases shipped by store over time">
+            <h2 className="text-lg font-semibold mb-4
+<h2 className="text-lg font-semibold mb-4">Cases Shipped by Store by Week</h2>
+            <div className="h-96" aria-label="Line chart showing cases shipped by store over time">
               <StoresByWeekChart 
                 storeData={processedData.allStoreData} 
                 allStores={processedData.allStores} 
@@ -837,4 +840,4 @@ class DashboardWithErrorBoundary extends React.Component {
   }
 }
 
-export default DashboardWithErrorBoundary;
+export default DashboardWithErrorBoundary;          
