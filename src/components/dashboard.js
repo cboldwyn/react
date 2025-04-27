@@ -1,79 +1,102 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { 
   LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, 
   Legend, ResponsiveContainer, ComposedChart, Area
 } from 'recharts';
 import Papa from 'papaparse';
 import _ from 'lodash';
-import { format, parseISO, getISOWeek, getYear } from 'date-fns';
+import { format, parseISO, getISOWeek, getYear, isValid } from 'date-fns';
 
-// Assume we're using webpack/craco file-loader configured for CSV files
-// Alternatively, these could be imported dynamically with fetch
-import productsCSV from '../data/Products2.csv';
-import salesOrderCSV from '../data/SalesOrder.csv';
-import purchaseOrderCSV from '../data/PO.csv';
-import clocksCSV from '../data/Clocks.csv';
+// Components for better code organization
+import LoadingSpinner from '../components/LoadingSpinner';
+import ErrorMessage from '../components/ErrorMessage';
+import ChartContainer from '../components/ChartContainer';
 
-const Dashboard = () => {
-  const [data, setData] = useState({
-    casesPerLaborHour: [],
-    salesAndPOByWeek: [],
-    topStoresByWeek: [],
-    allStoresByWeek: [],
-    weeks: []
-  });
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [activeTab, setActiveTab] = useState('efficiency');
-
-  // Color palette with more colors to handle all stores
-  const colors = {
-    shipped: '#4CAF50',
-    received: '#2196F3',
-    laborHours: '#FFC107',
-    efficiency: '#9C27B0',
-    stores: [
-      '#F44336', '#E91E63', '#9C27B0', '#673AB7', '#3F51B5', 
-      '#2196F3', '#03A9F4', '#00BCD4', '#009688', '#4CAF50',
-      '#8BC34A', '#CDDC39', '#FFEB3B', '#FFC107', '#FF9800',
-      '#FF5722', '#795548', '#9E9E9E', '#607D8B', '#000000'
-    ]
-  };
-
-  useEffect(() => {
-    const processData = async () => {
-      try {
-        setLoading(true);
-        
-        // Parse CSVs
-        const products = await parseCSVFile(productsCSV);
-        const salesOrders = await parseCSVFile(salesOrderCSV);
-        const purchaseOrders = await parseCSVFile(purchaseOrderCSV);
-        const clocks = await parseCSVFile(clocksCSV);
-        
-        // Process data
-        const result = calculateMetrics(products, salesOrders, purchaseOrders, clocks);
-        setData(result);
-        setLoading(false);
-      } catch (err) {
-        setError('Error loading data: ' + err.message);
-        setLoading(false);
+// Utility function to handle date parsing with better error handling
+const getWeekNumber = (dateStr) => {
+  try {
+    // Handle various date formats
+    let date;
+    if (typeof dateStr === 'string') {
+      // Try various date formats
+      date = parseISO(dateStr);
+      
+      // If invalid, try alternative parsing methods
+      if (!isValid(date)) {
+        // Check for MM/DD/YYYY format
+        const parts = dateStr.split(/[-/]/);
+        if (parts.length === 3) {
+          // Try different date arrangements
+          const potentialDates = [
+            new Date(parts[2], parts[0] - 1, parts[1]), // MM/DD/YYYY
+            new Date(parts[2], parts[1] - 1, parts[0]), // DD/MM/YYYY
+            new Date(`${parts[2]}-${parts[0]}-${parts[1]}`) // Try ISO format YYYY-MM-DD
+          ];
+          
+          // Find the first valid date
+          date = potentialDates.find(d => isValid(d));
+        }
       }
-    };
+    } else {
+      date = new Date(dateStr);
+    }
     
-    processData();
-  }, []);
+    // If still invalid after all attempts, throw error
+    if (!date || !isValid(date)) {
+      throw new Error(`Invalid date: ${dateStr}`);
+    }
+    
+    // Get week number and year
+    const weekNum = getISOWeek(date);
+    const year = getYear(date);
+    
+    // Format to ensure proper sorting (pad with leading zero if needed)
+    const paddedWeek = weekNum.toString().padStart(2, '0');
+    return `${year}-W${paddedWeek}`;
+  } catch (err) {
+    console.error('Error parsing date:', dateStr, err);
+    return null; // Return null instead of 'Unknown' for better filtering
+  }
+};
 
-  // Helper function to parse CSV files
-  const parseCSVFile = (file) => {
+// A11y-friendly color palette
+const colors = {
+  shipped: '#2E7D32', // Darker green for better contrast
+  received: '#1565C0', // Darker blue for better contrast
+  laborHours: '#F57F17', // Darker amber for better contrast
+  efficiency: '#6A1B9A', // Darker purple for better contrast
+  stores: [
+    '#C62828', '#AD1457', '#6A1B9A', '#4527A0', '#283593', 
+    '#1565C0', '#0277BD', '#00838F', '#00695C', '#2E7D32',
+    '#558B2F', '#9E9D24', '#F9A825', '#FF8F00', '#EF6C00',
+    '#D84315', '#4E342E', '#424242', '#37474F', '#000000'
+  ]
+};
+
+// CSV data fetching function with better error handling
+const fetchCSVData = async (url) => {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch ${url}: ${response.status} ${response.statusText}`);
+    }
+    const text = await response.text();
     return new Promise((resolve, reject) => {
-      Papa.parse(file, {
+      Papa.parse(text, {
         header: true,
         dynamicTyping: true,
         skipEmptyLines: true,
         complete: (results) => {
           if (results.errors && results.errors.length > 0) {
-            reject(new Error('Error parsing CSV: ' + results.errors[0].message));
+            // Check if errors are fatal
+            const fatalErrors = results.errors.filter(e => e.type === 'Fatal');
+            if (fatalErrors.length > 0) {
+              reject(new Error(`Error parsing CSV: ${fatalErrors[0].message}`));
+            } else {
+              // Non-fatal errors - log but continue
+              console.warn('Non-fatal CSV parsing issues:', results.errors);
+              resolve(results.data);
+            }
           } else {
             resolve(results.data);
           }
@@ -83,60 +106,284 @@ const Dashboard = () => {
         }
       });
     });
-  };
+  } catch (error) {
+    console.error(`Error fetching CSV from ${url}:`, error);
+    throw error;
+  }
+};
 
-  // Extract week number from date
-  const getWeekNumber = (dateStr) => {
-    try {
-      // Handle various date formats
-      const date = typeof dateStr === 'string' ? parseISO(dateStr) : new Date(dateStr);
-      
-      // Get week number and year
-      const weekNum = getISOWeek(date);
-      const year = getYear(date);
-      
-      // Format to ensure proper sorting (pad with leading zero if needed)
-      const paddedWeek = weekNum.toString().padStart(2, '0');
-      return `${year}-W${paddedWeek}`;
-    } catch (err) {
-      console.error('Error parsing date:', dateStr, err);
-      return 'Unknown';
+// Separated charts into individual components
+const EfficiencyChart = ({ data }) => (
+  <ResponsiveContainer width="100%" height="100%">
+    <LineChart data={data}>
+      <CartesianGrid strokeDasharray="3 3" />
+      <XAxis dataKey="week" />
+      <YAxis />
+      <Tooltip />
+      <Legend />
+      <Line 
+        type="monotone" 
+        dataKey="totalCasesPerLaborHour" 
+        name="Total Cases Per Labor Hour" 
+        stroke={colors.efficiency} 
+        strokeWidth={2} 
+        activeDot={{ r: 8 }}
+      />
+    </LineChart>
+  </ResponsiveContainer>
+);
+
+const LaborVsCasesChart = ({ data }) => (
+  <ResponsiveContainer width="100%" height="100%">
+    <ComposedChart data={data}>
+      <CartesianGrid strokeDasharray="3 3" />
+      <XAxis dataKey="week" />
+      <YAxis yAxisId="left" />
+      <YAxis yAxisId="right" orientation="right" />
+      <Tooltip />
+      <Legend />
+      <Bar 
+        yAxisId="left" 
+        dataKey="received" 
+        name="Cases Received" 
+        fill={colors.received} 
+        stackId="cases" 
+      />
+      <Bar 
+        yAxisId="left" 
+        dataKey="shipped" 
+        name="Cases Shipped" 
+        fill={colors.shipped} 
+        stackId="cases" 
+      />
+      <Line 
+        yAxisId="right" 
+        type="monotone" 
+        dataKey="laborHours" 
+        name="Labor Hours" 
+        stroke={colors.laborHours} 
+        strokeWidth={2} 
+      />
+    </ComposedChart>
+  </ResponsiveContainer>
+);
+
+const WeeklyVolumeChart = ({ data }) => (
+  <ResponsiveContainer width="100%" height="100%">
+    <BarChart data={data}>
+      <CartesianGrid strokeDasharray="3 3" />
+      <XAxis dataKey="week" />
+      <YAxis />
+      <Tooltip />
+      <Legend />
+      <Bar dataKey="received" name="Cases Received" fill={colors.received} />
+      <Bar dataKey="shipped" name="Cases Shipped" fill={colors.shipped} />
+    </BarChart>
+  </ResponsiveContainer>
+);
+
+const CumulativeVolumeChart = ({ data }) => {
+  const cumulativeData = useMemo(() => {
+    return data.map((week, index, array) => {
+      // Calculate cumulative values
+      const prevData = index > 0 ? array[index - 1] : { cumulativeReceived: 0, cumulativeShipped: 0 };
+      return {
+        ...week,
+        cumulativeReceived: (prevData.cumulativeReceived || 0) + week.received,
+        cumulativeShipped: (prevData.cumulativeShipped || 0) + week.shipped
+      };
+    });
+  }, [data]);
+  
+  return (
+    <ResponsiveContainer width="100%" height="100%">
+      <ComposedChart data={cumulativeData}>
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="week" />
+        <YAxis />
+        <Tooltip />
+        <Legend />
+        <Area 
+          type="monotone" 
+          dataKey="cumulativeReceived" 
+          name="Cumulative Cases Received" 
+          fill={colors.received} 
+          stroke={colors.received} 
+          fillOpacity={0.3} 
+        />
+        <Area 
+          type="monotone" 
+          dataKey="cumulativeShipped" 
+          name="Cumulative Cases Shipped" 
+          fill={colors.shipped} 
+          stroke={colors.shipped} 
+          fillOpacity={0.3} 
+        />
+      </ComposedChart>
+    </ResponsiveContainer>
+  );
+};
+
+const TopStoresChart = ({ data }) => (
+  <ResponsiveContainer width="100%" height="100%">
+    <BarChart 
+      data={data}
+      layout="vertical"
+    >
+      <CartesianGrid strokeDasharray="3 3" />
+      <XAxis type="number" />
+      <YAxis dataKey="store" type="category" width={150} />
+      <Tooltip />
+      <Legend />
+      <Bar dataKey="total" name="Total Cases Shipped" fill={colors.shipped} />
+    </BarChart>
+  </ResponsiveContainer>
+);
+
+const StoresByWeekChart = ({ storeData, allStores }) => (
+  <ResponsiveContainer width="100%" height="100%">
+    <LineChart>
+      <CartesianGrid strokeDasharray="3 3" />
+      <XAxis 
+        dataKey="week" 
+        type="category" 
+        allowDuplicatedCategory={false}
+      />
+      <YAxis />
+      <Tooltip />
+      <Legend />
+      {allStores.map((store, index) => (
+        <Line 
+          key={store}
+          dataKey="cases"
+          type="monotone"
+          name={store}
+          stroke={colors.stores[index % colors.stores.length]}
+          dot={false}
+          connectNulls={true}
+          // Filter data points for this specific store
+          data={storeData.filter(d => d.store === store)}
+        />
+      ))}
+    </LineChart>
+  </ResponsiveContainer>
+);
+
+// Main Dashboard Component
+const Dashboard = () => {
+  // State handling with better organization
+  const [rawData, setRawData] = useState({
+    products: null,
+    salesOrders: null,
+    purchaseOrders: null,
+    clocks: null
+  });
+  
+  const [processedData, setProcessedData] = useState({
+    casesPerLaborHour: [],
+    salesAndPOByWeek: [],
+    topStoresByWeek: [],
+    allStoresByWeek: [],
+    weeks: []
+  });
+  
+  const [loadingState, setLoadingState] = useState({
+    loading: true,
+    error: null,
+    dataProgress: {
+      products: false,
+      salesOrders: false,
+      purchaseOrders: false,
+      clocks: false
     }
+  });
+  
+  const [activeTab, setActiveTab] = useState('efficiency');
+
+  // URLs for CSV files - in a real app, these would come from environment variables
+  const dataUrls = {
+    products: '/data/Products2.csv',
+    salesOrders: '/data/SalesOrder.csv',
+    purchaseOrders: '/data/PO.csv',
+    clocks: '/data/Clocks.csv'
   };
 
-  // Main metrics calculation function
-  const calculateMetrics = (products, salesOrders, purchaseOrders, clocks) => {
-    // Create a map of product names to units per case for easy lookup
+  // Load a single CSV file with progress tracking
+  const loadCSV = useCallback(async (name, url) => {
+    try {
+      const data = await fetchCSVData(url);
+      setRawData(prev => ({ ...prev, [name]: data }));
+      setLoadingState(prev => ({
+        ...prev, 
+        dataProgress: { ...prev.dataProgress, [name]: true }
+      }));
+      return data;
+    } catch (error) {
+      setLoadingState(prev => ({
+        ...prev,
+        error: `Error loading ${name} data: ${error.message}`
+      }));
+      return null;
+    }
+  }, []);
+
+  // Data processing functions
+  const processProductData = useCallback((products) => {
     const productMap = {};
+    
+    if (!Array.isArray(products)) {
+      console.error('Invalid product data format:', products);
+      return productMap;
+    }
+    
     products.forEach(product => {
-      if (product['Product Name']) {
-        productMap[product['Product Name']] = product['Units Per Case'] || 1;
+      // Handle various property naming conventions and validate data
+      const productName = product['Product Name'] || product['ProductName'] || product['Name'] || product['Product'];
+      const unitsPerCase = parseInt(product['Units Per Case'] || product['UnitsPerCase'] || product['Units'] || '1', 10);
+      
+      if (productName && !isNaN(unitsPerCase) && unitsPerCase > 0) {
+        productMap[productName] = unitsPerCase;
+      } else {
+        console.warn('Skipping invalid product:', product);
       }
     });
+    
+    return productMap;
+  }, []);
 
-    // Process sales orders - calculate cases shipped by week and by store
+  const processSalesData = useCallback((salesOrders, productMap) => {
     const salesByWeek = {};
     const salesByStoreAndWeek = {};
-
+    
+    if (!Array.isArray(salesOrders) || !productMap) {
+      console.error('Invalid sales data or product map:', { salesOrders, productMap });
+      return { salesByWeek, salesByStoreAndWeek };
+    }
+    
     salesOrders.forEach(order => {
-      const product = order.Product;
-      const quantity = order.Quantity || 0;
-      const customer = order.Customer || 'Unknown';
+      // Handle various property naming conventions
+      const product = order.Product || order['Product Name'] || order.ProductName;
+      const quantity = parseInt(order.Quantity || order.Qty || 0, 10);
+      const customer = order.Customer || order.Store || order.Client || 'Unknown';
+      const deliveryDate = order['Delivery Date'] || order.DeliveryDate || order.Date;
       
-      // Skip if we can't find the product in our product map or it's invalid
-      if (!product || !productMap[product]) {
+      // Skip if missing essential data
+      if (!product || !quantity || !deliveryDate || isNaN(quantity) || quantity <= 0) {
         return;
       }
       
-      const unitsPerCase = productMap[product] || 1;
+      // Skip if we can't find the product in our product map
+      const unitsPerCase = productMap[product];
+      if (!unitsPerCase) {
+        console.warn(`Product not found in product map: ${product}`);
+        return;
+      }
+      
       const cases = quantity / unitsPerCase;
       
       // Parse the delivery date
-      const deliveryDate = order['Delivery Date'];
-      if (!deliveryDate) return;
-      
       const week = getWeekNumber(deliveryDate);
-      if (week === 'Unknown') return;
+      if (!week) return;
       
       // Add to total cases shipped by week
       if (!salesByWeek[week]) {
@@ -153,28 +400,41 @@ const Dashboard = () => {
       }
       salesByStoreAndWeek[customer][week] += cases;
     });
+    
+    return { salesByWeek, salesByStoreAndWeek };
+  }, []);
 
-    // Process purchase orders - calculate cases received by week
+  const processPurchaseData = useCallback((purchaseOrders, productMap) => {
     const poByWeek = {};
-
+    
+    if (!Array.isArray(purchaseOrders) || !productMap) {
+      console.error('Invalid purchase order data or product map:', { purchaseOrders, productMap });
+      return poByWeek;
+    }
+    
     purchaseOrders.forEach(po => {
-      const product = po['Product Name'];
-      const quantity = po['Purchase Quantity'] || 0;
+      // Handle various property naming conventions
+      const product = po['Product Name'] || po.Product || po.ProductName;
+      const quantity = parseInt(po['Purchase Quantity'] || po.Quantity || po.Qty || 0, 10);
+      const poDate = po['Purchase Order Date'] || po.PODate || po.Date;
       
-      // Skip if we can't find the product in our product map or it's invalid
-      if (!product || !productMap[product]) {
+      // Skip if missing essential data
+      if (!product || !quantity || !poDate || isNaN(quantity) || quantity <= 0) {
         return;
       }
       
-      const unitsPerCase = productMap[product] || 1;
+      // Skip if we can't find the product in our product map
+      const unitsPerCase = productMap[product];
+      if (!unitsPerCase) {
+        console.warn(`Product not found in product map: ${product}`);
+        return;
+      }
+      
       const cases = quantity / unitsPerCase;
       
       // Parse the purchase order date
-      const poDate = po['Purchase Order Date'];
-      if (!poDate) return;
-      
       const week = getWeekNumber(poDate);
-      if (week === 'Unknown') return;
+      if (!week) return;
       
       // Add to total cases received by week
       if (!poByWeek[week]) {
@@ -182,135 +442,235 @@ const Dashboard = () => {
       }
       poByWeek[week] += cases;
     });
+    
+    return poByWeek;
+  }, []);
 
-    // Calculate labor hours by week
+  const processClockData = useCallback((clocks) => {
     const laborHoursByWeek = {};
-
+    
+    if (!Array.isArray(clocks)) {
+      console.error('Invalid clock data:', clocks);
+      return laborHoursByWeek;
+    }
+    
     clocks.forEach(clock => {
-      if (!clock['Date In']) return;
+      // Handle various property naming conventions
+      const dateIn = clock['Date In'] || clock.DateIn || clock.Date;
+      const laborHours = parseFloat(clock['Total Less Break'] || clock.TotalLessBreak || clock.Hours || 0);
       
-      const dateIn = clock['Date In'];
+      // Skip if missing essential data
+      if (!dateIn || isNaN(laborHours) || laborHours <= 0) {
+        return;
+      }
+      
       const week = getWeekNumber(dateIn);
-      if (week === 'Unknown') return;
-      
-      // Use Total Less Break as labor hours
-      const laborHours = clock['Total Less Break'] || 0;
+      if (!week) return;
       
       if (!laborHoursByWeek[week]) {
         laborHoursByWeek[week] = 0;
       }
       laborHoursByWeek[week] += laborHours;
     });
-
-    // Combine all weeks from both sales and POs and sort them chronologically
-    const allWeeks = [...new Set([...Object.keys(salesByWeek), ...Object.keys(poByWeek)])].sort((a, b) => {
-      // Extract year and week numbers for proper numerical comparison
-      const [yearA, weekA] = a.split('-W');
-      const [yearB, weekB] = b.split('-W');
-      
-      // Compare years first
-      if (yearA !== yearB) {
-        return parseInt(yearA) - parseInt(yearB);
-      }
-      // Then compare week numbers
-      return parseInt(weekA) - parseInt(weekB);
-    });
-
-    // Calculate cases per labor hour by week
-    const casesPerLaborHourByWeek = {};
-
-    allWeeks.forEach(week => {
-      const receivedCases = poByWeek[week] || 0;
-      const shippedCases = salesByWeek[week] || 0;
-      const laborHours = laborHoursByWeek[week] || 0;
-      
-      casesPerLaborHourByWeek[week] = {
-        week,
-        receivedCases,
-        shippedCases,
-        laborHours,
-        totalCasesPerLaborHour: laborHours > 0 ? (receivedCases + shippedCases) / laborHours : 0
-      };
-    });
-
-    // Format data for charts
-    const formattedWeeklyData = allWeeks.map(week => ({
-      week,
-      received: poByWeek[week] || 0,
-      shipped: salesByWeek[week] || 0,
-      laborHours: laborHoursByWeek[week] || 0,
-      totalCasesPerLaborHour: casesPerLaborHourByWeek[week]?.totalCasesPerLaborHour || 0
-    }));
-
-    // Process data for store analysis
-    const storeTotal = {};
-    const storeDataMap = {};
     
-    Object.keys(salesByStoreAndWeek).forEach(store => {
-      storeTotal[store] = Object.values(salesByStoreAndWeek[store]).reduce((sum, cases) => sum + cases, 0);
+    return laborHoursByWeek;
+  }, []);
+
+  const calculateMetrics = useCallback((products, salesOrders, purchaseOrders, clocks) => {
+    try {
+      // Create product lookup map
+      const productMap = processProductData(products);
+      if (Object.keys(productMap).length === 0) {
+        throw new Error('No valid products found');
+      }
       
-      // Create weekly data points for each store
-      const weeklyData = allWeeks.map(week => ({
+      // Process sales orders
+      const { salesByWeek, salesByStoreAndWeek } = processSalesData(salesOrders, productMap);
+      if (Object.keys(salesByWeek).length === 0) {
+        console.warn('No valid sales orders found');
+      }
+      
+      // Process purchase orders
+      const poByWeek = processPurchaseData(purchaseOrders, productMap);
+      if (Object.keys(poByWeek).length === 0) {
+        console.warn('No valid purchase orders found');
+      }
+      
+      // Process labor hours
+      const laborHoursByWeek = processClockData(clocks);
+      if (Object.keys(laborHoursByWeek).length === 0) {
+        console.warn('No valid clock data found');
+      }
+      
+      // Combine all weeks from both sales and POs and sort them chronologically
+      const allWeeks = [...new Set([
+        ...Object.keys(salesByWeek), 
+        ...Object.keys(poByWeek),
+        ...Object.keys(laborHoursByWeek)
+      ])].sort((a, b) => {
+        // Extract year and week numbers for proper numerical comparison
+        const [yearA, weekA] = a.split('-W');
+        const [yearB, weekB] = b.split('-W');
+        
+        // Compare years first
+        if (yearA !== yearB) {
+          return parseInt(yearA) - parseInt(yearB);
+        }
+        // Then compare week numbers
+        return parseInt(weekA) - parseInt(weekB);
+      });
+      
+      // Early exit if no valid weeks
+      if (allWeeks.length === 0) {
+        throw new Error('No valid data weeks found');
+      }
+      
+      // Calculate metrics
+      const casesPerLaborHourByWeek = {};
+      allWeeks.forEach(week => {
+        const receivedCases = poByWeek[week] || 0;
+        const shippedCases = salesByWeek[week] || 0;
+        const laborHours = laborHoursByWeek[week] || 0;
+        
+        casesPerLaborHourByWeek[week] = {
+          week,
+          receivedCases,
+          shippedCases,
+          laborHours,
+          totalCasesPerLaborHour: laborHours > 0 ? (receivedCases + shippedCases) / laborHours : 0
+        };
+      });
+      
+      // Format data for charts
+      const formattedWeeklyData = allWeeks.map(week => ({
         week,
-        cases: salesByStoreAndWeek[store]?.[week] || 0,
-        store
+        received: poByWeek[week] || 0,
+        shipped: salesByWeek[week] || 0,
+        laborHours: laborHoursByWeek[week] || 0,
+        totalCasesPerLaborHour: casesPerLaborHourByWeek[week]?.totalCasesPerLaborHour || 0
       }));
       
-      storeDataMap[store] = {
-        store,
-        data: weeklyData,
-        total: storeTotal[store]
-      };
-    });
-    
-    // Sort stores by total volume for the top stores chart
-    const topStores = Object.keys(storeTotal)
-      .sort((a, b) => storeTotal[b] - storeTotal[a])
-      .slice(0, 10);
+      // Process data for store analysis
+      const storeTotal = {};
+      Object.keys(salesByStoreAndWeek).forEach(store => {
+        storeTotal[store] = Object.values(salesByStoreAndWeek[store]).reduce((sum, cases) => sum + cases, 0);
+      });
       
-    // Get all stores for the complete store analysis
-    const allStores = Object.keys(storeTotal).sort((a, b) => storeTotal[b] - storeTotal[a]);
-
-    // Prepare all store data for the LineChart
-    const allStoreData = [];
-    allWeeks.forEach(week => {
-      allStores.forEach(store => {
-        allStoreData.push({
-          week,
-          cases: salesByStoreAndWeek[store]?.[week] || 0,
-          store
+      // Sort stores by total volume
+      const allStores = Object.keys(storeTotal).sort((a, b) => storeTotal[b] - storeTotal[a]);
+      const topStores = allStores.slice(0, 10);
+      
+      // Format top stores data
+      const topStoresData = topStores.map(store => ({
+        store,
+        total: storeTotal[store]
+      }));
+      
+      // Prepare all store data for the LineChart
+      const allStoreData = [];
+      allWeeks.forEach(week => {
+        allStores.forEach(store => {
+          allStoreData.push({
+            week,
+            cases: salesByStoreAndWeek[store]?.[week] || 0,
+            store
+          });
         });
       });
-    });
+      
+      return {
+        casesPerLaborHour: Object.values(casesPerLaborHourByWeek),
+        salesAndPOByWeek: formattedWeeklyData,
+        topStoresByWeek: topStoresData,
+        allStoreData,
+        allStores,
+        weeks: allWeeks
+      };
+    } catch (error) {
+      console.error('Error calculating metrics:', error);
+      throw error;
+    }
+  }, [processProductData, processSalesData, processPurchaseData, processClockData]);
 
-    // Format the metrics for the dashboard
-    return {
-      casesPerLaborHour: Object.values(casesPerLaborHourByWeek),
-      salesAndPOByWeek: formattedWeeklyData,
-      topStoresByWeek: topStores.map(store => storeDataMap[store]),
-      allStoresByWeek: allStores.map(store => storeDataMap[store]),
-      allStoreData,
-      weeks: allWeeks
+  // Load data with sequential processing to improve performance
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        setLoadingState(prev => ({ ...prev, loading: true, error: null }));
+        
+        // Load products first (needed for other calculations)
+        const products = await loadCSV('products', dataUrls.products);
+        if (!products) return; // Stop if products failed to load
+        
+        // Load remaining data in parallel
+        const [salesOrders, purchaseOrders, clocks] = await Promise.all([
+          loadCSV('salesOrders', dataUrls.salesOrders),
+          loadCSV('purchaseOrders', dataUrls.purchaseOrders),
+          loadCSV('clocks', dataUrls.clocks)
+        ]);
+        
+        // Check if all data was loaded successfully
+        if (!salesOrders || !purchaseOrders || !clocks) return;
+        
+        // Process data
+        const result = calculateMetrics(products, salesOrders, purchaseOrders, clocks);
+        setProcessedData(result);
+        setLoadingState(prev => ({ ...prev, loading: false }));
+      } catch (err) {
+        setLoadingState(prev => ({ 
+          ...prev, 
+          loading: false, 
+          error: `Error processing data: ${err.message}` 
+        }));
+      }
     };
-  };
+    
+    loadData();
+  }, [loadCSV, calculateMetrics, dataUrls]);
 
-  if (loading) {
+  // Memoized derived data for performance
+  const topStoresData = useMemo(() => {
+    return processedData.topStoresByWeek || [];
+  }, [processedData.topStoresByWeek]);
+
+  // Handle tab changes
+  const handleTabChange = useCallback((tab) => {
+    setActiveTab(tab);
+  }, []);
+
+  // Render loading state
+  if (loadingState.loading) {
     return (
-      <div className="flex justify-center items-center h-screen">
+      <div className="flex justify-center items-center h-screen" role="status" aria-live="polite">
         <div className="text-center">
           <div className="text-xl mb-4">Loading dashboard data...</div>
           <div className="h-8 w-8 border-4 border-t-blue-500 border-b-blue-500 rounded-full animate-spin mx-auto"></div>
+          <div className="mt-4">
+            {Object.entries(loadingState.dataProgress).map(([key, loaded]) => (
+              <div key={key} className="flex items-center">
+                <div className={`w-4 h-4 rounded-full mr-2 ${loaded ? 'bg-green-500' : 'bg-gray-300'}`}></div>
+                <span>{key}: {loaded ? 'Loaded' : 'Loading...'}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     );
   }
 
-  if (error) {
+  // Render error state
+  if (loadingState.error) {
     return (
-      <div className="flex justify-center items-center h-screen">
-        <div className="text-center text-red-600">
-          <div className="text-xl mb-4">Error</div>
-          <div>{error}</div>
+      <div className="flex justify-center items-center h-screen bg-red-50" role="alert">
+        <div className="text-center text-red-600 p-6 bg-white shadow-lg rounded-lg max-w-lg">
+          <div className="text-xl font-bold mb-4">Error Loading Dashboard</div>
+          <div className="whitespace-pre-wrap text-left">{loadingState.error}</div>
+          <button 
+            className="mt-6 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
+            onClick={() => window.location.reload()}
+          >
+            Retry
+          </button>
         </div>
       </div>
     );
@@ -318,224 +678,168 @@ const Dashboard = () => {
 
   return (
     <div className="flex flex-col h-screen bg-gray-100">
-      <div className="bg-blue-600 text-white p-4 shadow-md">
+      {/* Header with ARIA role */}
+      <header className="bg-blue-600 text-white p-4 shadow-md" role="banner">
         <h1 className="text-2xl font-bold">Logistics Performance Dashboard</h1>
-      </div>
+      </header>
       
-      <div className="flex mb-4 bg-white shadow-md mt-4 mx-4">
+      {/* Navigation tabs with accessibility attributes */}
+      <nav className="flex mb-4 bg-white shadow-md mt-4 mx-4" role="navigation" aria-label="Dashboard Sections">
         <button 
           className={`px-6 py-3 ${activeTab === 'efficiency' ? 'bg-blue-500 text-white' : 'bg-white text-blue-500'}`}
-          onClick={() => setActiveTab('efficiency')}
+          onClick={() => handleTabChange('efficiency')}
+          aria-pressed={activeTab === 'efficiency'}
+          aria-controls="efficiency-panel"
         >
           Efficiency Metrics
         </button>
         <button 
           className={`px-6 py-3 ${activeTab === 'volume' ? 'bg-blue-500 text-white' : 'bg-white text-blue-500'}`}
-          onClick={() => setActiveTab('volume')}
+          onClick={() => handleTabChange('volume')}
+          aria-pressed={activeTab === 'volume'}
+          aria-controls="volume-panel"
         >
           Volume by Week
         </button>
         <button 
           className={`px-6 py-3 ${activeTab === 'stores' ? 'bg-blue-500 text-white' : 'bg-white text-blue-500'}`}
-          onClick={() => setActiveTab('stores')}
+          onClick={() => handleTabChange('stores')}
+          aria-pressed={activeTab === 'stores'}
+          aria-controls="stores-panel"
         >
           Store Analysis
         </button>
-      </div>
+      </nav>
       
-      <div className="flex-grow p-4 overflow-auto">
-        {activeTab === 'efficiency' && (
-          <div className="grid grid-cols-1 gap-6">
-            <div className="bg-white p-4 rounded shadow-md">
-              <h2 className="text-lg font-semibold mb-4">Cases Handled Per Labor Hour</h2>
-              <div className="h-96">
-                <ResponsiveContainer width="100%" height="100%">
-                  <LineChart data={data.salesAndPOByWeek}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="week" />
-                    <YAxis />
-                    <Tooltip />
-                    <Legend />
-                    <Line 
-                      type="monotone" 
-                      dataKey="totalCasesPerLaborHour" 
-                      name="Total Cases Per Labor Hour" 
-                      stroke={colors.efficiency} 
-                      strokeWidth={2} 
-                    />
-                  </LineChart>
-                </ResponsiveContainer>
-              </div>
-            </div>
-            
-            <div className="bg-white p-4 rounded shadow-md">
-              <h2 className="text-lg font-semibold mb-4">Labor Hours vs. Cases Handled</h2>
-              <div className="h-96">
-                <ResponsiveContainer width="100%" height="100%">
-                  <ComposedChart data={data.salesAndPOByWeek}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="week" />
-                    <YAxis yAxisId="left" />
-                    <YAxis yAxisId="right" orientation="right" />
-                    <Tooltip />
-                    <Legend />
-                    <Bar 
-                      yAxisId="left" 
-                      dataKey="received" 
-                      name="Cases Received" 
-                      fill={colors.received} 
-                      stackId="cases" 
-                    />
-                    <Bar 
-                      yAxisId="left" 
-                      dataKey="shipped" 
-                      name="Cases Shipped" 
-                      fill={colors.shipped} 
-                      stackId="cases" 
-                    />
-                    <Line 
-                      yAxisId="right" 
-                      type="monotone" 
-                      dataKey="laborHours" 
-                      name="Labor Hours" 
-                      stroke={colors.laborHours} 
-                      strokeWidth={2} 
-                    />
-                  </ComposedChart>
-                </ResponsiveContainer>
-              </div>
+      {/* Main content */}
+      <main className="flex-grow p-4 overflow-auto">
+        {/* Efficiency Metrics Panel */}
+        <div 
+          id="efficiency-panel" 
+          role="tabpanel" 
+          aria-labelledby="efficiency-tab"
+          className={`grid grid-cols-1 gap-6 ${activeTab !== 'efficiency' ? 'hidden' : ''}`}
+        >
+          <div className="bg-white p-4 rounded shadow-md">
+            <h2 className="text-lg font-semibold mb-4">Cases Handled Per Labor Hour</h2>
+            <div className="h-96" aria-label="Line chart showing cases handled per labor hour by week">
+              <EfficiencyChart data={processedData.salesAndPOByWeek} />
             </div>
           </div>
-        )}
+          
+          <div className="bg-white p-4 rounded shadow-md">
+            <h2 className="text-lg font-semibold mb-4">Labor Hours vs. Cases Handled</h2>
+            <div className="h-96" aria-label="Chart comparing labor hours against cases received and shipped">
+              <LaborVsCasesChart data={processedData.salesAndPOByWeek} />
+            </div>
+          </div>
+        </div>
         
-        {activeTab === 'volume' && (
-          <div className="grid grid-cols-1 gap-6">
-            <div className="bg-white p-4 rounded shadow-md">
-              <h2 className="text-lg font-semibold mb-4">Cases Shipped and Received by Week</h2>
-              <div className="h-96">
-                <ResponsiveContainer width="100%" height="100%">
-                  <BarChart data={data.salesAndPOByWeek}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="week" />
-                    <YAxis />
-                    <Tooltip />
-                    <Legend />
-                    <Bar dataKey="received" name="Cases Received" fill={colors.received} />
-                    <Bar dataKey="shipped" name="Cases Shipped" fill={colors.shipped} />
-                  </BarChart>
-                </ResponsiveContainer>
-              </div>
-            </div>
-            
-            <div className="bg-white p-4 rounded shadow-md">
-              <h2 className="text-lg font-semibold mb-4">Cumulative Cases Handled</h2>
-              <div className="h-96">
-                <ResponsiveContainer width="100%" height="100%">
-                  <ComposedChart 
-                    data={data.salesAndPOByWeek.map((week, index, array) => {
-                      // Calculate cumulative values
-                      const prevData = index > 0 ? array[index - 1] : { cumulativeReceived: 0, cumulativeShipped: 0 };
-                      return {
-                        ...week,
-                        cumulativeReceived: (prevData.cumulativeReceived || 0) + week.received,
-                        cumulativeShipped: (prevData.cumulativeShipped || 0) + week.shipped
-                      };
-                    })}
-                  >
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="week" />
-                    <YAxis />
-                    <Tooltip />
-                    <Legend />
-                    <Area 
-                      type="monotone" 
-                      dataKey="cumulativeReceived" 
-                      name="Cumulative Cases Received" 
-                      fill={colors.received} 
-                      stroke={colors.received} 
-                      fillOpacity={0.3} 
-                    />
-                    <Area 
-                      type="monotone" 
-                      dataKey="cumulativeShipped" 
-                      name="Cumulative Cases Shipped" 
-                      fill={colors.shipped} 
-                      stroke={colors.shipped} 
-                      fillOpacity={0.3} 
-                    />
-                  </ComposedChart>
-                </ResponsiveContainer>
-              </div>
+        {/* Volume by Week Panel */}
+        <div 
+          id="volume-panel" 
+          role="tabpanel" 
+          aria-labelledby="volume-tab"
+          className={`grid grid-cols-1 gap-6 ${activeTab !== 'volume' ? 'hidden' : ''}`}
+        >
+          <div className="bg-white p-4 rounded shadow-md">
+            <h2 className="text-lg font-semibold mb-4">Cases Shipped and Received by Week</h2>
+            <div className="h-96" aria-label="Bar chart showing cases shipped and received by week">
+              <WeeklyVolumeChart data={processedData.salesAndPOByWeek} />
             </div>
           </div>
-        )}
+          
+          <div className="bg-white p-4 rounded shadow-md">
+            <h2 className="text-lg font-semibold mb-4">Cumulative Cases Handled</h2>
+            <div className="h-96" aria-label="Area chart showing cumulative cases handled over time">
+              <CumulativeVolumeChart data={processedData.salesAndPOByWeek} />
+            </div>
+          </div>
+        </div>
         
-        {activeTab === 'stores' && (
-          <div className="grid grid-cols-1 gap-6">
-            <div className="bg-white p-4 rounded shadow-md">
-              <h2 className="text-lg font-semibold mb-4">Top 10 Stores by Total Cases Shipped</h2>
-              <div className="h-96">
-                <ResponsiveContainer width="100%" height="100%">
-                  <BarChart 
-                    data={data.topStoresByWeek.map(store => ({
-                      store: store.store,
-                      total: store.total
-                    }))}
-                    layout="vertical"
-                  >
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis type="number" />
-                    <YAxis dataKey="store" type="category" width={150} />
-                    <Tooltip />
-                    <Legend />
-                    <Bar dataKey="total" name="Total Cases Shipped" fill={colors.shipped} />
-                  </BarChart>
-                </ResponsiveContainer>
-              </div>
-            </div>
-            
-            <div className="bg-white p-4 rounded shadow-md">
-              <h2 className="text-lg font-semibold mb-4">Cases Shipped by Store by Week</h2>
-              <div className="h-96">
-                <ResponsiveContainer width="100%" height="100%">
-                  <LineChart 
-                    data={data.allStoreData}
-                  >
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis 
-                      dataKey="week" 
-                      type="category" 
-                      allowDuplicatedCategory={false}
-                    />
-                    <YAxis />
-                    <Tooltip />
-                    <Legend />
-                    {data.allStoresByWeek.map((store, index) => (
-                      <Line 
-                        key={store.store}
-                        dataKey="cases"
-                        type="monotone"
-                        name={store.store}
-                        stroke={colors.stores[index % colors.stores.length]}
-                        dot={false}
-                        connectNulls={true}
-                        // Filter data points for this specific store
-                        data={data.allStoreData.filter(d => d.store === store.store)}
-                      />
-                    ))}
-                  </LineChart>
-                </ResponsiveContainer>
-              </div>
+        {/* Store Analysis Panel */}
+        <div 
+          id="stores-panel" 
+          role="tabpanel" 
+          aria-labelledby="stores-tab"
+          className={`grid grid-cols-1 gap-6 ${activeTab !== 'stores' ? 'hidden' : ''}`}
+        >
+          <div className="bg-white p-4 rounded shadow-md">
+            <h2 className="text-lg font-semibold mb-4">Top 10 Stores by Total Cases Shipped</h2>
+            <div className="h-96" aria-label="Horizontal bar chart showing top 10 stores by cases shipped">
+              <TopStoresChart data={topStoresData} />
             </div>
           </div>
-        )}
-      </div>
+          
+          <div className="bg-white p-4 rounded shadow-md">
+            <h2 className="text-lg font-semibold mb-4">Cases Shipped by Store by Week</h2>
+<div className="h-96" aria-label="Line chart showing cases shipped by store over time">
+              <StoresByWeekChart 
+                storeData={processedData.allStoreData} 
+                allStores={processedData.allStores} 
+              />
+            </div>
+          </div>
+        </div>
+      </main>
       
-      <div className="bg-gray-200 p-4 text-center text-sm text-gray-600">
-        Last updated: {new Date().toLocaleString()}
-      </div>
+      {/* Footer with last updated info */}
+      <footer className="bg-gray-200 p-4 text-center text-sm text-gray-600">
+        <div>Last updated: {new Date().toLocaleString()}</div>
+        <div className="mt-1">Data Source: Warehouse Management System</div>
+      </footer>
     </div>
   );
 };
 
-export default Dashboard;
+// Main component with error boundary
+class DashboardWithErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false, error: null, errorInfo: null };
+  }
+
+  static getDerivedStateFromError(error) {
+    // Update state so the next render will show the fallback UI
+    return { hasError: true, error };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    // Log error information
+    console.error('Dashboard error:', error, errorInfo);
+    this.setState({ errorInfo });
+  }
+
+  render() {
+    if (this.state.hasError) {
+      // Render fallback UI
+      return (
+        <div className="flex justify-center items-center h-screen bg-red-50" role="alert">
+          <div className="text-center text-red-600 p-6 bg-white shadow-lg rounded-lg max-w-lg">
+            <div className="text-xl font-bold mb-4">Dashboard Error</div>
+            <div className="whitespace-pre-wrap text-left overflow-auto max-h-64">
+              {this.state.error?.toString()}
+              <details className="mt-4">
+                <summary className="cursor-pointer font-semibold">Error Details</summary>
+                <pre className="mt-2 text-xs overflow-auto max-h-40 bg-gray-100 p-2 rounded">
+                  {this.state.errorInfo?.componentStack}
+                </pre>
+              </details>
+            </div>
+            <button 
+              className="mt-6 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
+              onClick={() => window.location.reload()}
+            >
+              Reload Dashboard
+            </button>
+          </div>
+        </div>
+      );
+    }
+
+    // If there's no error, render the Dashboard component as normal
+    return <Dashboard />;
+  }
+}
+
+export default DashboardWithErrorBoundary;
