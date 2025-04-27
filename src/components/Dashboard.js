@@ -769,7 +769,6 @@ const Dashboard = () => {
           </div>
           
           <div className="bg-white p-4 rounded shadow-md">
-            <h2 className="text-lg font-semibold mb-4
 <h2 className="text-lg font-semibold mb-4">Cases Shipped by Store by Week</h2>
             <div className="h-96" aria-label="Line chart showing cases shipped by store over time">
               <StoresByWeekChart 
