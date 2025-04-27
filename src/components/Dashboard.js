@@ -276,14 +276,6 @@ const DATA_URLS = {
 // Main Dashboard Component
 const Dashboard = () => {
   // State handling with better organization
-  // Store the raw data that will be processed later
-  const [rawDataState, setRawDataState] = useState({
-    products: null,
-    salesOrders: null,
-    purchaseOrders: null,
-    clocks: null
-  });
-  
   const [processedData, setProcessedData] = useState({
     casesPerLaborHour: [],
     salesAndPOByWeek: [],
@@ -309,7 +301,6 @@ const Dashboard = () => {
   const loadCSV = useCallback(async (name, url) => {
     try {
       const csvData = await fetchCSVData(url);
-      setRawDataState(prev => ({ ...prev, [name]: csvData }));
       setLoadingState(prev => ({
         ...prev, 
         dataProgress: { ...prev.dataProgress, [name]: true }
@@ -761,6 +752,13 @@ const Dashboard = () => {
           aria-labelledby="stores-tab"
           className={`grid grid-cols-1 gap-6 ${activeTab !== 'stores' ? 'hidden' : ''}`}
         >
+          <div className="bg-white p-4 rounded shadow-md">
+            <h2 className="text-lg font-semibold mb-4">Top 10 Stores by Total Cases Shipped</h2>
+            <div className="h-96" aria-label="Horizontal bar chart showing top 10 stores by cases shipped">
+              <TopStoresChart data={topStoresData} />
+            </div>
+          </div>
+          
           <div className="bg-white p-4 rounded shadow-md">
             <h2 className="text-lg font-semibold mb-4">Top 10 Stores by Total Cases Shipped</h2>
             <div className="h-96" aria-label="Horizontal bar chart showing top 10 stores by cases shipped">
